@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+  {% include header.html %}
+  <body>
+      <div class="container">
+        <div class="row">
+            {% include sidebar.html %}
+
+            {% include content.html %}
+        </div>
+    </div>
+
+      {% include footer.html %}
+
+      <script>
+          function orderNav() {
+              var list,
+                      section,
+                      header,
+                      sections = [],
+                      headers = {},
+                      sectionLists = {};
+
+
+              var navUl = document.querySelectorAll('#navigation ul')[0],
+                      navLis = document.querySelectorAll('#navigation ul li');
+
+              if (!navUl) return;
+
+              for (var i = 0; i < navLis.length; i++) {
+                  var parentOrder,order, lists = [], li = navLis[i];
+
+                  if (li.classList.contains('nav-header')) {
+                      section = li.textContent || li.innerText;
+                      sections.push(section);
+                      headers[section] = li;
+                      continue;
+                  }
+
+
+                  if (!sectionLists[section]) {
+                      sectionLists[section] = {};
+                  }
+
+                  parentOrder = parseFloat(li.getAttribute('parent-order'));
+
+                  if(!sectionLists[section][parentOrder]){
+                      sectionLists[section][parentOrder] = [];
+                  }
+
+                  order = parseFloat(li.getAttribute('data-order'));
+                  //lists.splice(order,0,li);
+                  //console.log(lists);
+                  sectionLists[section][parentOrder].push([order,li]);
+              }
+              console.log(sectionLists);
+
+
+              for (var i = 0; i < sections.length; i++) {
+                  section = sections[i];
+                  var subsections = sectionLists[section];
+                  if (header = headers[section]) {
+                      navUl.appendChild(header);
+                  }
+                  for (var j in subsections) {
+                      list = subsections[j].sort(function (a, b) {
+                          return a[0] - b[0];
+                      });
+                      console.log(list);
+
+                      navUl.appendChild(list[0][1]);
+                      for (var k = 1; k < list.length; k++) {
+                          navUl.appendChild(list[k][1]);
+                          list[k][1].style.paddingLeft = "20px";
+                      }
+                  }
+              }
+          }
+
+          if (document.querySelectorAll) orderNav();
+      </script>
+  </body>
+
+</html>
+
+
