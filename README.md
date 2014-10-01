@@ -34,8 +34,8 @@ git clone https://github.com/Rise-Vision/risevision-documentation.git
 bower intall
 ```
 
-* You can write new docs under the _post directory. Folder inside this directory is used to separate the content. 
-When creating a new post pay attention on the YALM front matter block: 
+* You can write new docs under the _post directory. Folders inside this directory is used to separate the content. 
+Pay attention on the YALM front matter block when creating a new post: 
 ```markdown
 ---
 layout: post
@@ -47,7 +47,7 @@ order: 0
 ---
 ```
 
-as category, parent-order and order variables are used to generate the sidebar menu. 
+as *category*, *parent-order* and *order*Fixed  variables are used to generate the sidebar menu. 
 
 For further info please look at [Jekyll Documentation](http://jekyllrb.com/docs/home/)
 
