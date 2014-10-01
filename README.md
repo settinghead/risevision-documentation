@@ -47,7 +47,7 @@ order: 0
 ---
 ```
 
-as *category*, *parent-order* and *order*Fixed  variables are used to generate the sidebar menu. 
+as *category*, *parent-order* and *order* variables are used to generate the sidebar menu. 
 
 For further info please look at [Jekyll Documentation](http://jekyllrb.com/docs/home/)
 
