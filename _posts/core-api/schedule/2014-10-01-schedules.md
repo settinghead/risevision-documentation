@@ -7,31 +7,31 @@ parent-order: 3
 order: 0
 ---
 
-#### [core.schedule.get]({% post_url core-api/schedule/2014-10-01-core.schedule.get %})
+#### [core.schedule.get]({{ site.baseurl }}{% post_url core-api/schedule/2014-10-01-core.schedule.get %})
 
 Returns the complete Schedule object by **id**.
 
 ***
 
-#### [core.schedule.list]({% post_url core-api/schedule/2014-10-01-core.schedule.list %})
+#### [core.schedule.list]({{ site.baseurl }}{% post_url core-api/schedule/2014-10-01-core.schedule.list %})
 
 Lists all Schedules under the given Company.
 
 ***
 
-#### [core.schedule.add]({% post_url core-api/schedule/2014-10-01-core.schedule.add %})
+#### [core.schedule.add]({{ site.baseurl }}{% post_url core-api/schedule/2014-10-01-core.schedule.add %})
 
 Adds a new Schedule to the given Company.
 
 ***
 
-#### [core.schedule.update]({% post_url core-api/schedule/2014-10-01-core.schedule.update %})
+#### [core.schedule.update]({{ site.baseurl }}{% post_url core-api/schedule/2014-10-01-core.schedule.update %})
 
 Updates the existing Schedule.
 
 ***
 
-#### [core.schedule.delete]({% post_url core-api/schedule/2014-10-01-core.schedule.delete %})
+#### [core.schedule.delete]({{ site.baseurl }}{% post_url core-api/schedule/2014-10-01-core.schedule.delete %})
 
 Deletes the Schedule.
 
