@@ -55,7 +55,7 @@ For further info please look at [Jekyll Documentation](http://jekyllrb.com/docs/
 
 * under the root directory run Jekyll server
 ```bash
-jenkyll server --watch --baseurl ''
+jekyll server --watch --baseurl ''
 ```
 
 * Open browser on http://localhost:4000
