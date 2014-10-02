@@ -30,7 +30,7 @@
               if (!navUl) return;
 
               for (var i = 0; i < navLis.length; i++) {
-                  var parentOrder,order, lists = [], li = navLis[i];
+                  var parentOrder,order, li = navLis[i];
 
                   if (li.classList.contains('nav-header')) {
                       section = li.textContent || li.innerText;
@@ -51,12 +51,8 @@
                   }
 
                   order = parseFloat(li.getAttribute('data-order'));
-                  //lists.splice(order,0,li);
-                  //console.log(lists);
                   sectionLists[section][parentOrder].push([order,li]);
               }
-              console.log(sectionLists);
-
 
               for (var i = 0; i < sections.length; i++) {
                   section = sections[i];
@@ -68,13 +64,45 @@
                       list = subsections[j].sort(function (a, b) {
                           return a[0] - b[0];
                       });
-                      console.log(list);
 
+                      // wraps the parent within a H3
+                      var parentHeader = document.createElement("h3");
+                      parentHeader.appendChild(list[0][1].getElementsByTagName("a")[0]);
+                      list[0][1].innerHTML = '';
+                      list[0][1].appendChild(parentHeader);
+                      list[0][1].style.paddingLeft = "20px";
                       navUl.appendChild(list[0][1]);
-                      for (var k = 1; k < list.length; k++) {
-                          navUl.appendChild(list[k][1]);
-                          list[k][1].style.paddingLeft = "20px";
+
+                      // wrap the li's within a div with a collapse class
+                      var divElement = document.createElement("div");
+                      divElement.className = "collapse";
+
+                      // check url path with link to add class 'in' to collapsed div.
+                      var urlPathName = window.location.pathname;
+                      var isToggled = false;
+                      if(list[0 ][1].getElementsByTagName("a")[0].getAttribute("href") === urlPathName){
+                          isToggled = true;
                       }
+
+                      //loop through all li and add them in order
+                      // also check for url matching then add font-weight bold.
+                      for (var k = 1; k < list.length; k++) {
+                          divElement.appendChild(list[k][1]);
+                          list[k][1].style.paddingLeft = "30px";
+
+                          var aElement = list[k][1].getElementsByTagName("a")[0];
+                          if(aElement.getAttribute("href") === urlPathName){
+                              isToggled = true;
+                              aElement.style.fontWeight = "bold";
+                          }
+                      }
+                      navUl.appendChild(divElement);
+
+
+                      if(isToggled){
+                          divElement.className = divElement.className + " in";
+                      }
+
                   }
               }
           }
