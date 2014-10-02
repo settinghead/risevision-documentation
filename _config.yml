@@ -20,6 +20,7 @@ kramdown:
   # use Github Flavored Markdown
   input: GFM
 
+highlighter: pygments
 
 exclude:
   - bower.json
@@ -33,7 +34,8 @@ sections: [
     ['post', 'Posts']
 ]
 
-
 # Dates are not included in permalinks
 permalink: none
 
+gems:
+  - jekyll-sitemap
