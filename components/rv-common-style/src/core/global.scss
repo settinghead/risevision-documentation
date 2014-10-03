@@ -519,7 +519,7 @@ a:hover {
     padding-bottom: 10px;
 
     .navbar-collapse {
-      margin-left: 40px;
+      margin-left: 20px;
 
       .navbar-nav {
         > li {
@@ -810,31 +810,33 @@ ul.social {
 
 /* Sign In button */
 .btn-sign-in {
-  color: #fff;
-  background-color: $rise-blue;
-  font-weight: bold;
+  @extend .btn-success;
 
   .log_in { color: #fff; }
+}
 
-  .fa::before,
-  .glyphicons::before {
-    color: #fff;
+.sign-in {
+  @extend .btn;
+  @extend .btn-link;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  border: 0;
+  color: $brand-primary !important;
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 5px;
   }
 
   &:hover,
-  &:focus {
-    color: #fff;
-    background: $rise-blue;
+  &:active {
+    text-decoration: none;
   }
 }
-
-/* Sign In button that is part of a navbar. */
-.navbar-default .navbar-nav .sign-in {
-  @extend .btn-sign-in;
-
-  .fa:before ,.glyphicons:before { color: #fff !important; }
-}
-
 
 
 /* Stripe */
