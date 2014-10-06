@@ -39,3 +39,4 @@ permalink: none
 
 gems:
   - jekyll-sitemap
+  - jekyll-lunr-js-search
