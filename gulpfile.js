@@ -18,9 +18,9 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+gulp.task('jekyll-build-dev', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+    return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
         .on('close', done);
 });
 
@@ -28,10 +28,11 @@ gulp.task('jekyll-build', function (done) {
  * Build the Jekyll Site for PRODUCTION
  */
 gulp.task('jekyll-build-prod', function (done) {
-
-    return cp.spawn('jekyll', ['build', '--config', "_config.yml,_config_prod.yml"], {stdio: 'inherit'})
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_prod.yml'], {stdio: 'inherit'})
         .on('close', done);
 });
+
 
 /**
  * Rebuild Jekyll & do page reload
@@ -43,7 +44,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-build-dev'], function() {
     browserSync({
         server: {
             baseDir: '_site'
