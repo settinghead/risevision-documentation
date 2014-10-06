@@ -8,6 +8,8 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
+var bower       = require('bower');
+var del         = require('delete');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -65,6 +67,34 @@ gulp.task('sass', function () {
 });
 
 /**
+ * Install bower dependencies
+ */
+gulp.task('bower-install', function(cb){
+    bower.commands.install([], {save: true}, {})
+        .on('end', function(installed){
+            cb(); // notify gulp that this task is finished
+        });
+});
+
+/**
+ * Clean bower cache
+ */
+gulp.task('bower-clean-cache', function(cb){
+    bower.commands.cache.clean([], {}, {})
+        .on('end', function(clened){
+            cb(); // notify gulp that this task is finished
+        });
+});
+
+/**
+ *  Remove all bower dependencies
+ */
+gulp.task('bower-rm', function(cb){
+    del.sync('assets/components');
+});
+
+
+/**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
@@ -72,6 +102,11 @@ gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
+
+/**
+ * Do a bower clean install
+ */
+gulp.task('bower-clean-install', ['bower-rm', 'bower-clean-cache','bower-install']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
