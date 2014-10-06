@@ -10,10 +10,26 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var bower       = require('bower');
 var del         = require('delete');
+var deploy      = require('gulp-gh-pages');
 
 var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
+    bundleInstall: '<span style="color: grey">Running:</span> $ bundle install'
 };
+
+//------------------------- Bundle Install ------------------------------
+/**
+ * Install jekyll and its plugins
+ */
+gulp.task('bundle-install', function (done) {
+    browserSync.notify(messages.bundleInstall);
+    return cp.spawn('bundle', ['install'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+
+
+//------------------------- Jekyll Build --------------------------------
 
 /**
  * Build the Jekyll Site
@@ -37,9 +53,11 @@ gulp.task('jekyll-build-prod', function (done) {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild-dev', ['jekyll-build-dev'], function () {
     browserSync.reload();
 });
+
+//------------------------- Browser Sync --------------------------------
 
 /**
  * Wait for jekyll-build, then launch the Server
@@ -51,6 +69,8 @@ gulp.task('browser-sync', ['sass', 'jekyll-build-dev'], function() {
         }
     });
 });
+
+//------------------------- Sass --------------------------------
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
@@ -66,6 +86,9 @@ gulp.task('sass', function () {
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('assets/css'));
 });
+
+
+//------------------------- Bower --------------------------------
 
 /**
  * Install bower dependencies
@@ -104,6 +127,17 @@ gulp.task('watch', function () {
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
+
+//------------------------- Deployment --------------------------------
+var options = {origin: "gh-pages-prod"}
+/**
+ *  Deploy to gh-pages
+ */
+gulp.task("deploy", function () {
+    return gulp.src("./_site/**/*")
+        .pipe(deploy(options));
+});
+
 /**
  * Do a bower clean install
  */
@@ -114,3 +148,14 @@ gulp.task('bower-clean-install', ['bower-rm', 'bower-clean-cache','bower-install
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+
+/**
+ * Do a clean build
+ */
+gulp.task('build-dev', ['bower-clean-install', 'bundle-install', 'jekyll-build-dev']);
+
+gulp.task('build-prod', ['bower-clean-install', 'bundle-install', 'jekyll-build-prod']);
+
+
+
