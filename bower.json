@@ -10,18 +10,20 @@
     "tests"
   ],
   "dependencies": {
-      "bootstrap": "~3.2.0",
-      "jquery": "~1.11.1",
-      "rv-common-style": "https://github.com/Rise-Vision/common-style.git",
-      "lunr.js": "0.5.5",
-      "date.format": "1.2.3",
-      "uri.js": "1.14.1",
-      "mustache.js": "0.8.2",
-      "jekyll-lunr-js-search": "https://github.com/slashdotdash/jekyll-lunr-js-search.git"
+    "bootstrap": "~3.2.0",
+    "jquery": "~1.11.1",
+    "rv-common-style": "https://github.com/Rise-Vision/common-style.git",
+    "lunr.js": "0.5.5",
+    "date.format": "1.2.3",
+    "uri.js": "1.14.1",
+    "mustache.js": "0.8.2",
+    "jekyll-lunr-js-search": "https://github.com/slashdotdash/jekyll-lunr-js-search.git"
   },
   "resolutions": {
-    "jquery": "~1.11.1"
-   },
+    "jquery": "~1.11.1",
+    "lunr.js": "0.5.5",
+    "uri.js": "1.14.1"
+  },
   "homepage": "https://github.com/Rise-Vision/rv-documentation",
   "authors": [
     "rodrigopavezi <rodrigopavezi@gmail.com>"
