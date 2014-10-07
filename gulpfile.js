@@ -4,6 +4,7 @@
  */
 
 var gulp        = require('gulp');
+var gutil       = require('gulp-util');
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
@@ -11,6 +12,7 @@ var cp          = require('child_process');
 var bower       = require('bower');
 var del         = require('delete');
 var deploy      = require('gulp-gh-pages');
+var argv        = require('minimist')(process.argv.slice(2));
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
@@ -34,7 +36,7 @@ gulp.task('bundle-install', function (done) {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build-dev', function (done) {
+gulp.task('jekyll-build-dev', ['bower-clean-install', 'bundle-install'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
         .on('close', done);
@@ -43,7 +45,7 @@ gulp.task('jekyll-build-dev', function (done) {
 /**
  * Build the Jekyll Site for PRODUCTION
  */
-gulp.task('jekyll-build-prod', function (done) {
+gulp.task('jekyll-build-prod', ['bower-clean-install', 'bundle-install'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_prod.yml'], {stdio: 'inherit'})
         .on('close', done);
@@ -93,28 +95,28 @@ gulp.task('sass', function () {
 /**
  * Install bower dependencies
  */
-gulp.task('bower-install', function(cb){
-    bower.commands.install([], {save: true}, {})
-        .on('end', function(installed){
+gulp.task('bower-install', ['bower-clean-cache', 'bower-rm'], function(){
+    return bower.commands.install([], {save: true}, {});
+        /*.on('end', function(installed){
             cb(); // notify gulp that this task is finished
-        });
+        });*/
 });
 
 /**
  * Clean bower cache
  */
-gulp.task('bower-clean-cache', function(cb){
-    bower.commands.cache.clean([], {}, {})
-        .on('end', function(clened){
+gulp.task('bower-clean-cache', function(){
+    return bower.commands.cache.clean([], {}, {});
+        /*.on('end', function(clened){
             cb(); // notify gulp that this task is finished
-        });
+        });*/
 });
 
 /**
  *  Remove all bower dependencies
  */
-gulp.task('bower-rm', function(cb){
-    del.sync('assets/components');
+gulp.task('bower-rm', function(){
+    return del.sync('assets/components');
 });
 
 
@@ -129,11 +131,22 @@ gulp.task('watch', function () {
 
 
 //------------------------- Deployment --------------------------------
-var options = {origin: "gh-pages-prod"}
+var options = {
+    remoteUrl: "https://github.com/Rise-Vision/rv-doc-prod.git"};
 /**
  *  Deploy to gh-pages
  */
 gulp.task("deploy", function () {
+
+    // Remove temp folder created by gulp-gh-pages
+    if (argv.clean) {
+        var os = require('os');
+        var path = require('path');
+        var repoPath = path.join(os.tmpdir(), 'tmpRepo');
+        gutil.log('Delete ' + gutil.colors.magenta(repoPath));
+        del.sync(repoPath, {force: true});
+    }
+
     return gulp.src("./_site/**/*")
         .pipe(deploy(options));
 });

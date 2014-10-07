@@ -29,6 +29,7 @@ exclude:
   - package.json
   - Gemfile
   - Gemfile.lock
+  - risevision-documentation.iml
 
 
 # Default categories (in order) to appear in the navigation
