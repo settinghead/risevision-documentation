@@ -132,7 +132,7 @@ gulp.task('watch', function () {
 
 //------------------------- Deployment --------------------------------
 var options = {
-    remoteUrl: "https://github.com/Rise-Vision/rv-doc-prod.git"};
+    remoteUrl: "git@github.com:Rise-Vision/rv-doc-prod.git"};
 /**
  *  Deploy to gh-pages
  */
