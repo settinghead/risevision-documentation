@@ -46,4 +46,4 @@ permalink: none
 
 gems:
   - jekyll-sitemap
-  - jekyll-lunr-js-search
+#  - jekyll_lunr_js_search
