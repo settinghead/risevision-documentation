@@ -1,18 +1,20 @@
+---
+---
 'use strict';
 var appDeveloperSpace = angular.module('appDeveloperSpace',["ngRoute","risevision.common.header","JSONedit"])
     .config (['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('/documentation',
+            .when('{{ site.baseurl }}/documentation',
             {
                 controller: 'DocumentationController',
                 templateUrl: 'documentation/documentation.html'
             })
-            .when('/documentation/:category/:post',
+            .when('{{ site.baseurl }}/documentation/:category/:post',
             {
                 controller: 'DocumentationController',
                 templateUrl: function(params){ return '/documentation/' + params.category + '/' + params.post; }
             })
-            .when('/documentation/search/:param',
+            .when('{{ site.baseurl }}/documentation/search/:param',
             {
                 controller: 'DocumentationController',
                 templateUrl: function(params){ return '/documentation/search/' +  params.param; }
