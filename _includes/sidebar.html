@@ -1,7 +1,6 @@
 <!-- sidebar -->
 <div id="navigation" class="col-md-3">
     <ul class="nav nav-pills nav-stacked">
-        <li><a href="{{ site.baseurl }}/"><h1>Home</h1></a></li>
         {% include search.form.html%}
         {% for section in site.sections %}
             {% assign attr = section[0] %}
@@ -11,7 +10,7 @@
                 {% if forloop.first %}
                     <li class="nav-header"><h2>{{ label }}</h2></li>
                 {% endif %}
-                <li parent-order="{{page.parent-order}}" data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+                <li parent-order="{{page.parent-order}}" data-order="{{ page.order }}"><a href="#{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
             {% endfor %}
 
         {% endfor %}

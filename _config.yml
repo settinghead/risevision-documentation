@@ -34,8 +34,8 @@ exclude:
 
 # Default categories (in order) to appear in the navigation
 sections: [
-    ['core-api', 'Core Api'],
-    ['widget-api', 'Widget Api'],
+    ['documentation/core-api', 'Core Api'],
+    ['documentation/widget-api', 'Widget Api'],
     ['ref', 'Reference'],
     ['dev', 'Developers'],
     ['post', 'Posts']
