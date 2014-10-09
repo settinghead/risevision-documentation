@@ -1,7 +1,5 @@
-/**
- * Created by rodrigopavezi on 9/23/14.
- */
-
+---
+---
 appDeveloperSpace
     .controller('CommonHeaderCtrl', function($rootScope,$scope) {
         $rootScope.navOptions = [{
@@ -9,7 +7,7 @@ appDeveloperSpace
             link: '#/'
         }, {
             title: 'Documentation',
-            link: '#/documentation'
+            link: '#{{ site.baseurl }}/documentation'
         }, {
             title: 'API Explorer',
             link: ''
