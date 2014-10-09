@@ -36,7 +36,7 @@ gulp.task('bundle-install', function (done) {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build-dev', ['bower-clean-install', 'bundle-install'], function (done) {
+gulp.task('jekyll-build-dev', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
         .on('close', done);
@@ -126,7 +126,7 @@ gulp.task('bower-rm', function(){
  */
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['index.html', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.yml','index.html', '_layouts/*.html', '_includes/*.html', '_posts/**/*.md', 'assets/**/*'], ['jekyll-rebuild-dev']);
 });
 
 

@@ -1,138 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="appDeveloperSpace">
 
   {% include head.html %}
-  {% include header.html %}
+
   <body>
+  <div ng-controller="CommonHeaderCtrl">
+      <common-header nav-options="navOptions"></common-header>
+  </div>
       <div class="container">
         <div class="row">
-            {% include sidebar.html %}
 
-            {% include content.html %}
+            <div ng-view></div>
+
+
         </div>
     </div>
 
       {% include footer.html %}
 
-      <script>
-          function orderNav() {
-              var list,
-                      section,
-                      header,
-                      sections = [],
-                      headers = {},
-                      sectionLists = {};
+      {% include jscomponents.html %}
 
 
-              var navUl = document.querySelectorAll('#navigation ul')[0],
-                      navLis = document.querySelectorAll('#navigation ul li');
 
-              if (!navUl) return;
-
-              for (var i = 0; i < navLis.length; i++) {
-                  var parentOrder,order, li = navLis[i];
-
-                  if (li.classList.contains('nav-header')) {
-                      section = li.textContent || li.innerText;
-                      sections.push(section);
-                      headers[section] = li;
-                      continue;
-                  }
-
-
-                  if (!sectionLists[section]) {
-                      sectionLists[section] = {};
-                  }
-
-                  parentOrder = parseFloat(li.getAttribute('parent-order'));
-
-                  if(!sectionLists[section][parentOrder]){
-                      sectionLists[section][parentOrder] = [];
-                  }
-
-                  order = parseFloat(li.getAttribute('data-order'));
-                  sectionLists[section][parentOrder].push([order,li]);
-              }
-
-              for (var i = 0; i < sections.length; i++) {
-                  section = sections[i];
-                  var subsections = sectionLists[section];
-                  if (header = headers[section]) {
-                      navUl.appendChild(header);
-                  }
-                  for (var j in subsections) {
-                      list = subsections[j].sort(function (a, b) {
-                          return a[0] - b[0];
-                      });
-
-                      // wraps the parent within a H3
-                      var parentHeader = document.createElement("h3");
-                      parentHeader.appendChild(list[0][1].getElementsByTagName("a")[0]);
-                      list[0][1].innerHTML = '';
-                      list[0][1].appendChild(parentHeader);
-                      list[0][1].style.paddingLeft = "20px";
-                      navUl.appendChild(list[0][1]);
-
-                      // wrap the li's within a div with a collapse class
-                      var divElement = document.createElement("div");
-                      divElement.className = "collapse";
-
-                      // check url path with link to add class 'in' to collapsed div.
-                      var urlPathName = window.location.pathname;
-                      var isToggled = false;
-                      if(list[0 ][1].getElementsByTagName("a")[0].getAttribute("href") === urlPathName){
-                          isToggled = true;
-                      }
-
-                      //loop through all li and add them in order
-                      // also check for url matching then add font-weight bold.
-                      for (var k = 1; k < list.length; k++) {
-                          divElement.appendChild(list[k][1]);
-                          list[k][1].style.paddingLeft = "30px";
-
-                          var aElement = list[k][1].getElementsByTagName("a")[0];
-                          if(aElement.getAttribute("href") === urlPathName){
-                              isToggled = true;
-                              aElement.style.fontWeight = "bold";
-                          }
-                      }
-                      navUl.appendChild(divElement);
-
-
-                      if(isToggled){
-                          divElement.className = divElement.className + " in";
-                      }
-
-                  }
-              }
-          }
-
-          if (document.querySelectorAll) orderNav();
-      </script>
-
-      <script type="text/javascript">
-          $(function() {
-              $('#search-query').lunrSearch({
-                  indexUrl: '{{ site.baseurl }}/search.json',             // URL of the `search.json` index data for your site
-                  results:  '#search-results',          // jQuery selector for the search results container
-                  entries:  '.entries',                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
-                  template: '#search-results-template'  // jQuery selector for the Mustache.js template
-              });
-          });
-      </script>
-
-      {% raw %}
-        <script id="search-results-template" type="text/mustache">
-          {{#entries}}
-            <article>
-              <h3>
-                {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-                <a href="{{baseurl}}{{url}}">{{title}}</a>
-              </h3>
-            </article>
-          {{/entries}}
-        </script>
-      {% endraw %}
   </body>
 
 </html>
