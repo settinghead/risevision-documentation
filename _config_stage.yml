@@ -1,0 +1,2 @@
+# Production Site settings
+baseurl: "/dev-hub-stage" # the subpath of your site, e.g. /blog/

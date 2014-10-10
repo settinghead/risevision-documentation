@@ -2,6 +2,7 @@
  * This script is based on https://github.com/shakyShane/jekyll-gulp-sass-browser-sync
  * Created by rodrigopavezi on 10/6/14.
  */
+var env = process.env.NODE_ENV || "dev"
 
 var gulp        = require('gulp');
 var gutil       = require('gulp-util');
@@ -36,26 +37,25 @@ gulp.task('bundle-install', function (done) {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build-dev', function (done) {
+gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
-        .on('close', done);
-});
+    if( env === "prod"){
+        return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_prod.yml'], {stdio: 'inherit'})
+            .on('close', done);
+    }else if(env === "stage"){
+        return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_stage.yml'], {stdio: 'inherit'})
+            .on('close', done);
+    }else {
+        return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
+            .on('close', done);
+    }
 
-/**
- * Build the Jekyll Site for PRODUCTION
- */
-gulp.task('jekyll-build-prod', ['bower-clean-install', 'bundle-install'], function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_prod.yml'], {stdio: 'inherit'})
-        .on('close', done);
 });
-
 
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild-dev', ['jekyll-build-dev'], function () {
+gulp.task('jekyll-rebuild-dev', ['jekyll-build'], function () {
     browserSync.reload();
 });
 
@@ -64,7 +64,7 @@ gulp.task('jekyll-rebuild-dev', ['jekyll-build-dev'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build-dev'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -119,7 +119,7 @@ gulp.task('bower-rm', function(){
     return del.sync('assets/components');
 });
 
-
+//------------------------- Watch --------------------------------
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
@@ -132,7 +132,14 @@ gulp.task('watch', function () {
 
 //------------------------- Deployment --------------------------------
 var options = {
-    remoteUrl: "git@github.com:Rise-Vision/rv-doc-prod.git"};
+            prod: {
+                remoteUrl: "git@github.com:Rise-Vision/rv-doc-prod.git"
+            },
+            stage: {
+                remoteUrl: "git@github.com:Rise-Vision/dev-hub-stage.git"
+            }
+        };
+
 /**
  *  Deploy to gh-pages
  */
@@ -148,7 +155,7 @@ gulp.task("deploy", function () {
     }
 
     return gulp.src("./_site/**/*")
-        .pipe(deploy(options));
+        .pipe(deploy(options[env]));
 });
 
 /**
@@ -162,13 +169,6 @@ gulp.task('bower-clean-install', ['bower-rm', 'bower-clean-cache','bower-install
  */
 gulp.task('default', ['browser-sync', 'watch']);
 
-
-/**
- * Do a clean build
- */
-gulp.task('build-dev', ['bower-clean-install', 'bundle-install', 'jekyll-build-dev']);
-
-gulp.task('build-prod', ['bower-clean-install', 'bundle-install', 'jekyll-build-prod']);
 
 
 

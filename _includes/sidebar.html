@@ -10,7 +10,7 @@
                 {% if forloop.first %}
                     <li class="nav-header"><h2>{{ label }}</h2></li>
                 {% endif %}
-                <li parent-order="{{page.parent-order}}" data-order="{{ page.order }}"><a href="#{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+                <li parent-order="{{page.parent-order}}" data-order="{{ page.order }}"><a href="#{{ page.url }}">{{ page.title }}</a></li>
             {% endfor %}
 
         {% endfor %}
