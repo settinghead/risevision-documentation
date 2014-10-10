@@ -1,5 +1,3 @@
----
----
 appDeveloperSpace
     .controller('CommonHeaderCtrl', function($rootScope,$scope) {
         $rootScope.navOptions = [{
@@ -7,7 +5,7 @@ appDeveloperSpace
             link: '#/'
         }, {
             title: 'Documentation',
-            link: '#{{ site.baseurl }}/documentation'
+            link: '#/documentation'
         }, {
             title: 'API Explorer',
             link: ''

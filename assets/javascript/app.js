@@ -4,20 +4,20 @@
 var appDeveloperSpace = angular.module('appDeveloperSpace',["ngRoute","risevision.common.header","JSONedit"])
     .config (['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('{{ site.baseurl }}/documentation',
+            .when('/documentation',
             {
                 controller: 'DocumentationController',
                 templateUrl: 'documentation/documentation.html'
             })
-            .when('{{ site.baseurl }}/documentation/:category/:post',
+            .when('/documentation/:category/:post',
             {
                 controller: 'DocumentationController',
-                templateUrl: function(params){ return '/documentation/' + params.category + '/' + params.post; }
+                templateUrl: function(params){ return '{{ site.baseurl }}/documentation/' + params.category + '/' + params.post; }
             })
-            .when('{{ site.baseurl }}/documentation/search/:param',
+            .when('/documentation/search/:param',
             {
                 controller: 'DocumentationController',
-                templateUrl: function(params){ return '/documentation/search/' +  params.param; }
+                templateUrl: function(params){ return '{{ site.baseurl }}/documentation/search/' +  params.param; }
             })
             .otherwise({redirectTo: '/'});
 
