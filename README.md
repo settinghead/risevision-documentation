@@ -51,7 +51,7 @@ gulp bundle-install
 
 * download components with bower
 ```bash
-gulp gulp bower-clean-install
+gulp bower-clean-install
 ```
 
 * Build application
@@ -79,7 +79,7 @@ For further info please look at [Jekyll Documentation](http://jekyllrb.com/docs/
 ### Run Local
 
 * under the root directory run gulp default task which will build and watch directories for changes 
-so to build and reload the browser after a change
+so building and reloading the browser after a change
 ```bash
 gulp
 ```
