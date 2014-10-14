@@ -84,7 +84,7 @@ so building and reloading the browser after a change
 gulp
 ```
 
-* If browser hasn't open, please open browser on http://localhost:3000
+* If browser hasn't opened, you can open it on http://localhost:3000
 
 ### Dependencies
 
