@@ -69,7 +69,6 @@
 
                 // check url path with link to add class 'in' to collapsed div.
                 var url = document.URL;
-                console.log("url " +url);
                 var isToggled = false;
                 if(url.indexOf(list[0 ][1].getElementsByTagName("a")[0].getAttribute("href")) > -1){
                     isToggled = true;
@@ -124,3 +123,10 @@
           {{/entries}}
         </script>
 {% endraw %}
+
+
+<script>
+
+    $(".code-sample-wrapper").appendTo(".code-sample-col");
+
+</script>

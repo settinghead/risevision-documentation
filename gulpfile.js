@@ -40,13 +40,13 @@ gulp.task('bundle-install', function (done) {
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
     if( env === "prod"){
-        return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_prod.yml'], {stdio: 'inherit'})
+        return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_prod.yml', '--trace'], {stdio: 'inherit'})
             .on('close', done);
     }else if(env === "stage"){
-        return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_stage.yml'], {stdio: 'inherit'})
+        return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config=_config.yml,_config_stage.yml', '--trace'], {stdio: 'inherit'})
             .on('close', done);
     }else {
-        return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
+        return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--trace'], {stdio: 'inherit'})
             .on('close', done);
     }
 
