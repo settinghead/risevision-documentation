@@ -211,4 +211,21 @@ table, th,td {
 }
 
 
+/**
+ * Sample code
+ */
+.code-sample-wrapper pre, code {
+  font-size: 11px;
+}
+
+.github-sample-reference .meta-info {
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.github-sample-reference .author-info {
+  float: right;
+  padding: 10px;
+}
+
 
