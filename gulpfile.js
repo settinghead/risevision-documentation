@@ -126,7 +126,7 @@ gulp.task('bower-rm', function(){
  */
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['*.yml','index.html', '_layouts/*.html', '_includes/*.html', '_posts/**/*.md', 'assets/**/*'], ['jekyll-rebuild-dev']);
+    gulp.watch(['*.yml','index.html', '_layouts/*.html', '_includes/*.html', '_posts/**/*.md', 'assets/**/*', 'documentation/**/*'], ['jekyll-rebuild-dev']);
 });
 
 
