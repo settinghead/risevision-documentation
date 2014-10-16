@@ -68,7 +68,8 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
-        }
+        },
+        port: 8000
     });
 });
 
@@ -125,8 +126,8 @@ gulp.task('bower-rm', function(){
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['*.yml','index.html', '_layouts/*.html', '_includes/*.html', '_posts/**/*.md', 'assets/**/*', 'documentation/**/*'], ['jekyll-rebuild-dev']);
+    gulp.watch('_sass/*.scss', ['sass', 'jekyll-rebuild-dev']);
+    gulp.watch(['*.yml','index.html', '_layouts/*.html', '_includes/*.html', '_posts/**/*.md', 'assets/**/*', 'documentation/**/*', 'apps/**/*'], ['jekyll-rebuild-dev']);
 });
 
 
