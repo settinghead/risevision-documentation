@@ -17,7 +17,17 @@
         "delete": "^0.1.5",
         "gulp-gh-pages": "0.4.0",
         "gulp-util": "3.0.1",
-        "minimist": "1.1.0"
+        "minimist": "1.1.0",
+        "chai": "^1.9.2",
+        "chai-as-promised": "^4.1.1",
+        "mocha": "^1.21.5",
+        "karma": "^0.12.24",
+        "karma-chai": "^0.1.0",
+        "karma-mocha": "^0.1.9",
+        "gulp-karma": "^0.0.1",
+        "karma-junit-reporter": "^0.2.2",
+        "gulp-rename": "^1.2.0"
+
     },
     "repository": {
         "type": "git",

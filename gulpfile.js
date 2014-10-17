@@ -14,6 +14,7 @@ var bower       = require('bower');
 var del         = require('delete');
 var deploy      = require('gulp-gh-pages');
 var argv        = require('minimist')(process.argv.slice(2));
+var karma       = require('karma').server;
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
@@ -158,6 +159,17 @@ gulp.task("deploy", function () {
     return gulp.src("./_site/**/*")
         .pipe(deploy(options[env]));
 });
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+    karma.start({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done);
+});
+
 
 /**
  * Do a bower clean install

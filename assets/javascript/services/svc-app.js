@@ -5,6 +5,7 @@
 angular.module("risevision.common.app",
     [
         "risevision.common.gapi",
+        "risevision.common.util",
         'LocalStorageModule'
 
     ])
