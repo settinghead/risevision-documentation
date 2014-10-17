@@ -4,18 +4,18 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("EditAppController",
-    ["$scope", "$location", "$routeParams", "$timeout", "getApp", "updateApp",
-    function($scope,$location, $routeParams, $timeout, getApp, updateApp){
+    ["$scope", "$location", "$stateParams", "$timeout", "getApp", "updateApp",
+    function($scope,$location, $stateParams, $timeout, getApp, updateApp){
         $scope.alerts = [];
         var successAlert = {type: 'success', msg: 'App edited successfully!'};
 
-        getApp($routeParams.id).then(function (app) {
+        getApp($stateParams.id).then(function (app) {
             $scope.app = app;
         });
 
         $scope.save = function(app) {
 
-            updateApp($routeParams.id,app).then(function(resp){
+            updateApp($stateParams.id,app).then(function(resp){
                 if($scope.alerts.indexOf(successAlert) == -1){
                     $scope.alerts.push(successAlert);
                 }

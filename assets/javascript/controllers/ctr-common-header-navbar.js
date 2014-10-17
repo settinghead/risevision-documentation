@@ -1,11 +1,11 @@
 angular.module("risevision.developer.hub")
-    .controller("CommonHeaderNavbarCtrl", function($rootScope,$scope) {
+    .controller("CommonHeaderNavbarCtrl", function($rootScope,$scope,$state) {
         $rootScope.navOptions = [{
             title: "Apps",
-            link: "#/apps"
+            link: $state.href("apps")
         }, {
             title: "Documentation",
-            link: "#/documentation"
+            link: $state.href("documentation")
         }, {
             title: "Style Guide",
             link: "http://rise-vision.github.io/style-guide/",

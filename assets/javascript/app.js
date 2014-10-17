@@ -1,43 +1,5 @@
----
----
 "use strict";
-angular.module("risevision.developer.hub",["ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app"])
-    .config (function ($locationProvider, $routeProvider) {
-
-        $routeProvider
-            .when("/documentation",
-            {
-                controller: "DocumentationController",
-                templateUrl: "documentation/documentation.html"
-            })
-            .when("/documentation/:category/:post",
-            {
-                controller: "DocumentationController",
-                templateUrl: function(params){ return "{{ site.baseurl }}/documentation/" + params.category + "/" + params.post; }
-            })
-            .when("/documentation/search/:param",
-            {
-                controller: "DocumentationController",
-                templateUrl: function(params){ return "{{ site.baseurl }}/documentation/search/" +  params.param; }
-            })
-            .when("/apps",
-            {
-                controller: "AppsController",
-                templateUrl: "apps/apps.html"
-            })
-            .when("/apps/add",
-            {
-                controller: "AddAppController",
-                templateUrl: "apps/app-form.html"
-            })
-            .when("/apps/edit/:id",
-            {
-                controller: "EditAppController",
-                templateUrl: "apps/app-form.html"
-            })
-            .otherwise({redirectTo: "/"});
-
-    })
+angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app"])
     .config([
         "$interpolateProvider", function($interpolateProvider) {
             return $interpolateProvider.startSymbol("{(").endSymbol(")}");
@@ -59,4 +21,4 @@ angular.module("risevision.developer.hub",["ngRoute","risevision.common.header",
 
 
         $translateProvider.preferredLanguage('en');
-    }]);;
+    }]);
