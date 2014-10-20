@@ -10,11 +10,11 @@ module.exports = function(config){
         files : [
             'assets/components/jquery/dist/jquery.js',
             'assets/components/angular/angular.js',
+            'assets/components/angular-route/angular-route.js',
+            'assets/components/angular-mocks/angular-mocks.js',
             'assets/components/q/q.js',
             "assets/components/angular-bootstrap/ui-bootstrap-tpls.js",
             'assets/components/rise-vision-common-header/dist/js/common-header.js',
-            'assets/components/angular-route/angular-route.js',
-            'assets/components/angular-mocks/angular-mocks.js',
             'assets/components/angular-local-storage/angular-local-storage.js',
             'assets/javascript/**/*.js'
 
@@ -26,15 +26,17 @@ module.exports = function(config){
 
         autoWatch : true,
 
-        frameworks: ['mocha', 'chai'],
+        frameworks: ['jasmine', 'chai'],
 
         browsers : ['Chrome'],
 
-        /*plugins : [
+        plugins : [
             'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-junit-reporter'
-        ],*/
+            //'karma-firefox-launcher',
+            'karma-jasmine',
+            'karma-junit-reporter',
+            'karma-chai'
+        ],
 
         junitReporter : {
             outputFile: 'test_out/unit.xml',

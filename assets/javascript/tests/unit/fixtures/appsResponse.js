@@ -1,7 +1,7 @@
 /**
  * Created by rodrigopavezi on 10/17/14.
  */
-rvFixtures.companiesResp =
+rvFixtures.apps =
 {
     "result": true,
     "code": 0,
@@ -26,7 +26,7 @@ rvFixtures.companiesResp =
             "kind": "developer#appItem"
         }
     ],
-    "kind": "store#subcompanies",
+    "kind": "core#apps",
     "etag": "\"m3B0HlJzvdoy3a3My2Q8yGbe2-w/uD_xJyf4_1xqzgfusXG19oog4Uo\""
 }
 ;

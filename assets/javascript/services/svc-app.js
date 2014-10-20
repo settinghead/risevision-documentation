@@ -5,15 +5,14 @@
 angular.module("risevision.common.app",
     [
         "risevision.common.gapi",
-        "risevision.common.util",
-        'LocalStorageModule'
+        "risevision.common.util"
 
     ])
     .constant("APP_WRITABLE_FIELDS", [
         "name", "description", "clientId", "url"
     ])
     .factory("listApps",
-    ["$q","coreAPILoader","$log", "localStorageService",function($q, coreAPILoader, $log, localStorageService){
+    ["$q","coreAPILoader","$log",function($q, coreAPILoader, $log){
         return function(companyId) {
             $log.debug("listApps called", companyId);
 
@@ -23,11 +22,8 @@ angular.module("risevision.common.app",
                 if (companyId) {
                     criteria.companyId = companyId;
                 }
-                var apps = localStorageService.get("apps");
-                //var mockApps = [{id: 1, name: "First app", description: "description of the app", clientId: "dadsa123123das", url: 'http://firstapp.com'}];
 
-                deferred.resolve(apps);
-                /*var request = coreApi.company.list(criteria);
+                var request = coreApi.app.list(criteria);
                 request.execute(function (resp) {
                     $log.debug("listApps resp", resp);
                     if (resp.result) {
@@ -37,13 +33,13 @@ angular.module("risevision.common.app",
                         deferred.reject(resp);
                     }
                 });
-                */
+
             });
             return deferred.promise;
         }
     }])
     .factory("getApp",
-    ["$q","coreAPILoader","$log", "localStorageService", function($q, coreAPILoader, $log, localStorageService){
+    ["$q","coreAPILoader","$log", function($q, coreAPILoader, $log){
         return function(id) {
             $log.debug("getApp called", id);
 
@@ -53,103 +49,86 @@ angular.module("risevision.common.app",
                 if (id) {
                     criteria.id = id;
                 }
-                //var mockApp = {id: 1, name: "First app", description: "description of the app", clientId: "dadsa123123das", url: 'http://firstapp.com'};
-                var apps = localStorageService.get("apps");
 
-                deferred.resolve(apps[id]);
-                /*var request = coreApi.app.get(criteria);
+                var request = coreApi.app.get(criteria);
                 request.execute(function (resp) {
-                    $log.debug("listApps resp", resp);
+                    $log.debug("getApp resp", resp);
                     if (resp.result) {
-                        deferred.resolve(resp.items);
+                        deferred.resolve(resp.item);
                     }
                     else {
                         deferred.reject(resp);
                     }
-                });*/
+                });
             });
             return deferred.promise;
         }
     }])
     .factory("createApp",
-    ["$q","coreAPILoader","$log", "localStorageService", "pick", "APP_WRITABLE_FIELDS", function($q, coreAPILoader, $log, localStorageService, pick, APP_WRITABLE_FIELDS){
+    ["$q","coreAPILoader","$log", "pick", "APP_WRITABLE_FIELDS", function($q, coreAPILoader, $log, pick, APP_WRITABLE_FIELDS){
         return function(companyId,userId, app) {
             $log.debug("createApp called", companyId, userId, app);
 
             var deferred = $q.defer();
             coreAPILoader().then(function (coreApi) {
                 var fields = pick.apply(this, [app].concat(APP_WRITABLE_FIELDS));
-                var request = coreApi.company.add({
+                var request = coreApi.app.add({
                     companyId: companyId,
                     userId: userId,
                     data: JSON.stringify(fields)
                 });
-                var apps = localStorageService.get("apps");
-                if(apps == null){
-                    apps = [];
-                }
-                apps.push(fields);
-                localStorageService.set("apps", apps);
-                //var mockApp = {id: 1, name: "First app", description: "description of the app", clientId: "dadsa123123das", url: 'http://firstapp.com'};
-                deferred.resolve(app);
-                /*request.execute(function (resp) {
-                 if(resp.result) {
-                 deferred.resolve(resp.item);
-                 }
-                 else {
-                 deferred.reject(resp);
-                 }
-                 }, deferred.reject);*/
+
+                request.execute(function (resp) {
+                    if(resp.result) {
+                        deferred.resolve(resp.item);
+                    }
+                    else {
+                        deferred.reject(resp);
+                    }
+                }, deferred.reject);
             });
             return deferred.promise;
         }
     }])
     .factory("updateApp",
-    ["$q","coreAPILoader","$log", "localStorageService", "pick", "APP_WRITABLE_FIELDS", function($q, coreAPILoader, $log, localStorageService, pick, APP_WRITABLE_FIELDS){
+    ["$q","coreAPILoader","$log", "pick", "APP_WRITABLE_FIELDS", function($q, coreAPILoader, $log, pick, APP_WRITABLE_FIELDS){
         return function(id, app) {
             $log.debug("updateApp called", id, app);
 
             var deferred = $q.defer();
             coreAPILoader().then(function (coreApi) {
                 var fields = pick.apply(this, [app].concat(APP_WRITABLE_FIELDS));
-                var request = coreApi.company.add({
+                var request = coreApi.app.update({
                     id: id,
                     data: JSON.stringify(fields)
                 });
-                var apps = localStorageService.get("apps");
-                if(apps == null){
-                    apps = [];
-                }
-                apps[id] = fields;
-                localStorageService.set("apps", apps);
 
-                //var mockApp = {id: 1, name: "First app", description: "description of the app", clientId: "dadsa123123das", url: 'http://firstapp.com'};
-                deferred.resolve(app);
-                /*request.execute(function (resp) {
-                 if(resp.result) {
-                 deferred.resolve(resp.item);
-                 }
-                 else {
-                 deferred.reject(resp);
-                 }
-                 }, deferred.reject);*/
+                request.execute(function (resp) {
+                    if(resp.result) {
+                        deferred.resolve(resp.item);
+                    }
+                    else {
+                        deferred.reject(resp);
+                    }
+                 }, deferred.reject);
             });
             return deferred.promise;
         }
     }])
     .factory("deleteApp",
-    ["$q","coreAPILoader","$log", "localStorageService", function($q, coreAPILoader, $log, localStorageService){
+    ["$q","coreAPILoader","$log", function($q, coreAPILoader, $log){
         return function(id) {
             $log.debug("deleteApp called", id);
 
             var deferred = $q.defer();
             coreAPILoader().then(function (coreApi) {
-
-               /* var criteria = {};
-                if(id) {criteria.id = id; }
-                var request = coreApi.company.delete(criteria);
+                var criteria = {};
+                if(id) {
+                    criteria.id = id;
+                }
+                var request = coreApi.app.delete(criteria);
                 request.execute(function (resp) {
-                    $log.debug("deleteCompany resp", resp);
+                    $log.debug("deleteApp resp", resp);
                     if(resp.result) {
                         deferred.resolve(resp.item);
                     }
@@ -157,15 +136,6 @@ angular.module("risevision.common.app",
                         deferred.reject(resp);
                     }
                 });
-                */
-                var apps = localStorageService.get("apps");
-                if(apps != null){
-                    apps.splice(id,1);
-                    localStorageService.set("apps", apps);
-                }
-
-                deferred.resolve(id);
-
             });
             return deferred.promise;
         }
