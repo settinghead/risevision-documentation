@@ -175,10 +175,10 @@ gulp.task('test', function (done) {
 });
 
 // Downloads the selenium webdriver
-gulp.task('webdriver_update', gp.webdriver_update);
+gulp.task('webdriver_update', ['browser-sync'], gp.webdriver_update);
 
 // Setting up the test task
-gulp.task('protractor', ['webdriver_update'], function(cb) {
+gulp.task('protractor', ['webdriver_update','browser-sync'], function(cb) {
     gulp.src(['./tests/e2e/**/*.js']).pipe(gp.protractor({
         configFile: 'protractor.conf.js'
     })).on('error', function(e) {
@@ -191,7 +191,7 @@ gulp.task('protractor', ['webdriver_update'], function(cb) {
     });
 });
 
-gulp.task('e2e-test', ['protractor']);
+gulp.task('e2e-test', ['browser-sync','protractor']);
 /**
  * Do a bower clean install
  */
