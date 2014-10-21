@@ -3,7 +3,7 @@
  */
 exports.config = {
 
-    baseUrl: 'http://localhost:8000',
+    baseUrl: 'http://localhost:8002',
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
