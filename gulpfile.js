@@ -15,6 +15,10 @@ var del         = require('delete');
 var deploy      = require('gulp-gh-pages');
 var argv        = require('minimist')(process.argv.slice(2));
 var karma       = require('karma').server;
+var gp          = require("gulp-protractor");
+
+
+
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
@@ -170,7 +174,24 @@ gulp.task('test', function (done) {
     }, done);
 });
 
+// Downloads the selenium webdriver
+gulp.task('webdriver_update', gp.webdriver_update);
 
+// Setting up the test task
+gulp.task('protractor', ['webdriver_update'], function(cb) {
+    gulp.src(['./tests/e2e/**/*.js']).pipe(gp.protractor({
+        configFile: 'protractor.conf.js'
+    })).on('error', function(e) {
+        browserSync.exit();
+        console.log(e);
+        cb();
+    }).on('end', function() {
+        browserSync.exit();
+        cb();
+    });
+});
+
+gulp.task('e2e-test', ['protractor']);
 /**
  * Do a bower clean install
  */

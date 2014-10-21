@@ -9,7 +9,7 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
         $translateProvider.translations('en', {
             'ADD_APP_TITLE': "Add a New App",
             'APP_NAME': "App Name",
-            'APP_CLIENT_ID': "Client ID",
+            'APP_CLIENT_ID': "Client Id",
             'SAVE_BUTTON': "Save",
             'EDIT_BUTTON': "Edit",
             'APP_DESCRIPTION': "Description",

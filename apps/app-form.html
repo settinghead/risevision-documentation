@@ -8,25 +8,25 @@
         <h2>{('ADD_APP_TITLE' | translate)}</h2>
         <form class="form-horizontal form" novalidate="">
             <div class="form-group">
-                <label for="appNameField" class="col-sm-2 control-label">{('APP_NAME' | translate)}:</label>
+                <label for="appNameField" id="appNameLabel" class="col-sm-2 control-label">{('APP_NAME' | translate)}</label>
                 <div class="col-sm-10">
                     <input id="appNameField" type="text" ng-model="app.name"/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="addDescriptionTextArea" class="col-sm-2 control-label">{('APP_DESCRIPTION' | translate)}:</label>
+                <label for="appDescriptionTextArea" id="appDescriptionLabel" class="col-sm-2 control-label">{('APP_DESCRIPTION' | translate)}</label>
                 <div class="col-sm-10">
-                    <textarea id="addDescriptionTextArea" ng-model="app.description"></textarea>
+                    <textarea id="appDescriptionTextArea" ng-model="app.description"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label for="appClientIdField" class="col-sm-2 control-label">{('APP_CLIENT_ID' | translate)}:</label>
+                <label for="appClientIdField" id="appClientIdLabel" class="col-sm-2 control-label">{('APP_CLIENT_ID' | translate)}</label>
                 <div class="col-sm-10">
                     <input id="appClientIdField" type="text" ng-model="app.clientId"/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="appUrlField" class="col-sm-2 control-label">{('APP_URL' | translate)}:</label>
+                <label for="appUrlField" id="appUrlLabel" class="col-sm-2 control-label">{('APP_URL' | translate)}</label>
                 <div class="col-sm-10">
                     <input id="appUrlField" type="text" ng-model="app.url"/>
                 </div>

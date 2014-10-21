@@ -16,7 +16,8 @@ module.exports = function(config){
             "assets/components/angular-bootstrap/ui-bootstrap-tpls.js",
             'assets/components/rise-vision-common-header/dist/js/common-header.js',
             'assets/components/angular-local-storage/angular-local-storage.js',
-            'assets/javascript/**/*.js'
+            'assets/javascript/**/*.js',
+            'tests/unit/**/*.js'
 
         ],
 
