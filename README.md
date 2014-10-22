@@ -1,8 +1,8 @@
-# Rise Vision Documentation
+# Rise Vision Developer Hub
 
 ## Introduction
 
-Rise vision documentation is a static site built with [Jekyll](http://jekyllrb.com/) to provide a easy and clean way to share our documentation with the community.
+Rise vision developer hub is an application built with [Jekyll](http://jekyllrb.com/) its plugin and our [Common-header](https://github.com/Rise-Vision/common-header) to provide a space where developer can manage their apps, have access to developer documentation and play with our developer tools.
 
 Project Name works in conjunction with [Rise Vision](http://www.risevision.com), the [digital signage management application](http://rva.risevision.com/) that runs on [Google Cloud](https://cloud.google.com).
 
@@ -10,18 +10,28 @@ At this time Chrome is the only browser that this project and Rise Vision suppor
 
 ## Built With
 - *[Jekyll](http://jekyllrb.com/)*
+- *[jekyll-lunr-js-search](https://github.com/slashdotdash/jekyll-lunr-js-search)*
+- *[jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)*
+- *[jekyll_github_sample](https://github.com/bwillis/jekyll-github-sample)*
+- *[bundler](http://bundler.io/)*
 - *[Bower](http://bower.io/)*
+- *[NPM](https://www.npmjs.org/)*
+- *[Gulp.js](http://gulpjs.com/)*
 - *[Common-Style](http://rise-vision.github.io/style-guide/)*
+- *[common-header](https://github.com/Rise-Vision/common-header)*
+- *[AngularJs](https://angularjs.org/)*
+- *[JQuery](http://jquery.com/)*
 
 ## Development
 
 ### Local Development Environment Setup and Installation
 
 * install Ruby on your environment 
+* install npm
 
-* install Jekyll 
+* install Bundler 
 ```bash
-gem install jekyll
+gem install bundler
 ```
 
 * clone the repo using Git to your local:
@@ -29,9 +39,24 @@ gem install jekyll
 git clone https://github.com/Rise-Vision/risevision-documentation.git
 ```
 
+* install all javascript libs such as gulp
+```bash
+npm install
+```
+
+* install jekyll and its plugins
+```bash
+gulp bundle-install
+```
+
 * download components with bower
 ```bash
-bower intall
+gulp bower-clean-install
+```
+
+* Build application
+```bash
+gulp jekyll-build 
 ```
 
 * You can write new docs under the _post directory. Folders inside this directory is used to separate the content. 
@@ -53,12 +78,13 @@ For further info please look at [Jekyll Documentation](http://jekyllrb.com/docs/
 
 ### Run Local
 
-* under the root directory run Jekyll server
+* under the root directory run gulp default task which will build and watch directories for changes 
+so building and reloading the browser after a change
 ```bash
-jekyll server --watch --baseurl ''
+gulp
 ```
 
-* Open browser on http://localhost:4000
+* If browser hasn't opened, you can open it on http://localhost:3000
 
 ### Dependencies
 
