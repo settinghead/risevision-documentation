@@ -19,7 +19,7 @@ Lists all Presentations under the given Company.
 
 ***
 
-#### [core.presentation.list](#{% post_url /documentation/core-api/presentation/2014-10-01-core.template.list %})
+#### [core.template.list](#{% post_url /documentation/core-api/presentation/2014-10-01-core.template.list %})
 
 Lists all Templates available to the given Company.
 
