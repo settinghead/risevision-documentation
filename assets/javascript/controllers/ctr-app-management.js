@@ -3,7 +3,7 @@
  */
 "use strict";
 angular.module("risevision.developer.hub")
-    .controller("AppsController",
+    .controller("AppManagementController",
     ["$scope", "$location","listApps", "userState", "deleteApp", function($scope, $location, listApps, userState, deleteApp){
         $scope.apps = [];
         var toogleMessageAndTable = function(){

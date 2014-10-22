@@ -12,15 +12,23 @@ angular.module("risevision.developer.hub")
             .state('apps', {
                 url: '/apps',
                 templateUrl: 'apps/apps.html',
-                controller: 'AppsController'
+                controller: 'MainAppController'
             })
-            .state('addApp', {
-                url: '/apps/add',
+            .state('apps.registration', {
+                url: '/registration',
+                templateUrl: 'apps/apps.registration.html'
+            })
+            .state('apps.userSignin', {
+                url: '/userSignin',
+                templateUrl: 'apps/apps.userSignin.html'
+            })
+            .state('apps.add', {
+                url: '/add',
                 templateUrl: 'apps/app-form.html',
                 controller: 'AddAppController'
             })
-            .state('editApp', {
-                url: '/apps/edit/:id',
+            .state('apps.edit', {
+                url: '/edit/:id',
                 templateUrl: 'apps/app-form.html',
                 controller: 'EditAppController'
             })

@@ -7,7 +7,7 @@ describe("Add or Edit Apps", function() {
         browser.get('#/apps');
     });
 
-    it("should go to add page when clicking on Add a New App button", function() {
+    xit("should go to add page when clicking on Add a New App button", function() {
         element(by.buttonText('Add a New App')).click();
         expect(browser.getLocationAbsUrl()).toMatch("/apps/add");
     });
