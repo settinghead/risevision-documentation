@@ -4,8 +4,8 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("AddAppController",
-    ["$scope", "$location", "$timeout", "createApp", "userState",
-    function($scope,$location, $timeout, createApp, userState){
+    ["$scope", "$timeout", "createApp", "userState",
+    function($scope,$timeout, createApp, userState){
         $scope.alerts = [];
         var successAlert = {type: 'success', msg: 'App added successfully!'};
 

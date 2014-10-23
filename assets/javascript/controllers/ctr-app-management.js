@@ -4,7 +4,7 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("AppManagementController",
-    ["$scope", "$location","listApps", "userState", "deleteApp", function($scope, $location, listApps, userState, deleteApp){
+    ["$scope", "$state","listApps", "userState", "deleteApp", function($scope, $state, listApps, userState, deleteApp){
         $scope.apps = [];
         var toogleMessageAndTable = function(){
             if($scope.apps != null && $scope.apps.length > 0){
@@ -24,12 +24,12 @@ angular.module("risevision.developer.hub")
 
 
         $scope.addNewApp = function() {
-            $location.path("/apps/add");
+            $state.go("apps.add");
 
         }
 
         $scope.editApp = function(id) {
-            $location.path("/apps/edit/" +id);
+            $state.go("apps.edit", {id: id});
         }
 
         $scope.deleteApp = function(id) {

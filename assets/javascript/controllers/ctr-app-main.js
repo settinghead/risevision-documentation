@@ -4,10 +4,10 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("MainAppController",
-    ["$scope", "$location", "$state", "userState", "$loading", "uiStatusManager",function($scope, $location, $state, userState, $loading, uiStatusManager) {
+    ["$scope", "$state", "userState", "$loading", "uiStatusManager",function($scope, $state, userState, $loading, uiStatusManager) {
 
         if(userState.isLoggedIn()){
-            $state.go("apps.add");
+            $state.go("apps.list");
         }else{
             $state.go("apps.registration");
         }

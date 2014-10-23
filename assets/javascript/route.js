@@ -22,6 +22,11 @@ angular.module("risevision.developer.hub")
                 url: '/userSignin',
                 templateUrl: 'apps/apps.userSignin.html'
             })
+            .state('apps.list', {
+                url: '/list',
+                templateUrl: 'apps/apps.list.html',
+                controller: 'AppManagementController'
+            })
             .state('apps.add', {
                 url: '/add',
                 templateUrl: 'apps/app-form.html',
