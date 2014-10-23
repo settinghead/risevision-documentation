@@ -15,7 +15,7 @@ These objects include:
 
 Relationships between these objects can be described as follows:
 
-[image to be added]
+![Core ERD]({{ site.baseurl }}/assets/images/core_erd.jpg)
 
 Utility read-only objects, such as:
 
@@ -24,3 +24,7 @@ Utility read-only objects, such as:
 - Time Zone
 
 are also provided to facilitate building of the user interface.
+
+Rise Vision APIs are [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer), they can be used on any platform using any development environment for as long as it supports sending and receiving data via HTTP protocol. 
+
+Rise Vision Core API is based on [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/java/endpoints/) which you can easily consume from a [Javascript client](https://cloud.google.com/appengine/docs/java/endpoints/consume_js).  
