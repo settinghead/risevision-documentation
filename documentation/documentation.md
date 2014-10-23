@@ -15,7 +15,7 @@ These objects include:
 
 Relationships between these objects can be described as follows:
 
-![Core ERD]({{ site.baseurl }}/assets/images/core_erd.jpg)
+![Core ERD]({{ site.baseurl }}/assets/images/core_erd.png)
 
 Utility read-only objects, such as:
 
