@@ -4,7 +4,7 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("MainAppController",
-    ["$scope", "$location", "$state", "userState", "$loading",function($scope, $location, $state, userState, $loading) {
+    ["$scope", "$location", "$state", "userState", "$loading", "uiStatusManager",function($scope, $location, $state, userState, $loading, uiStatusManager) {
 
         if(userState.isLoggedIn()){
             $state.go("apps.add");
@@ -22,12 +22,20 @@ angular.module("risevision.developer.hub")
             }
         }
 
+        $scope.$watch(function () { return uiStatusManager.getStatus(); },
+            function (newStatus){
+                if(newStatus) {
+                    if(newStatus === "canManageApps") {
+                        $state.go("apps.add");
+                    }
+                }
+        });
+
         $scope.registerDeveloper = function() {
             $loading.startGlobal("auth-buttons-login");
             userState.authenticate(true).then().finally(function(){
                 $loading.stopGlobal("auth-buttons-login");
-                uiStatusManager.invalidateStatus("registerdAsRiseVisionUser");
-                $state.go("apps.add");
+                uiStatusManager.invalidateStatus("canManageApps");
             });
         }
     }]);

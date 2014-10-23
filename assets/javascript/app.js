@@ -1,5 +1,18 @@
 "use strict";
 angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app"])
+    .config(["uiStatusDependencies", function (uiStatusDependencies) {
+        uiStatusDependencies.addDependencies({
+            "canManageApps": "registerdAsRiseVisionUser"
+        });
+    }])
+
+    .factory("canManageApps", ["$q", function ($q) {
+        return function () {
+            var deferred = $q.defer();
+            deferred.resolve(true);
+            return deferred.promise;
+        };
+    }])
     .config([
         "$interpolateProvider", function($interpolateProvider) {
             return $interpolateProvider.startSymbol("{(").endSymbol(")}");
