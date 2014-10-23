@@ -7,7 +7,7 @@ Rise Vision APIs (Core API and Viewer API) allow client applications to view and
 
 These objects include:
 
-- Company
+- [Company](#{% post_url /documentation/core-api/company/2014-10-01-core.companies %})
 - Display
 - User
 - Schedule
