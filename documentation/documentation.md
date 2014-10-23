@@ -13,7 +13,7 @@ These objects include:
 - Schedule
 - Presentation
 
-[core.company.get](#{% post_url /documentation/core-api/company/2014-10-01-core.company.get %})
+[test](#{% post_url /documentation/core-api/company/2014-10-01-core.company.get %})
 
 Relationships between these objects can be described as follows:
 
