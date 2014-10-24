@@ -39,11 +39,11 @@ Allows client applications to request content (schedules, presentations) as well
 You can use Viewer API to build a custom Viewer app that would show content stored in Rise Vision Platform on your displays. 
 Because Viewer API is designed with unattended apps in mind, there is no requirement for the user to login, instead the API uses display's unique ID to authenticate. 
 
-###Widget API
+###Player API
 
 Facilitates development of support applications running on local displays and managing content caching, display control, etc.
 
-You can use Player API to create a custom Player app that would start Viewer (standard or custom), cache files, turn the display hardware on and off etc on any OS.
+You can use Player API to create a custom Player app that can start Viewer (standard or custom), cache files, turn the display hardware on and off, etc on an OS of your choice.
 
 ###Widget API
 
