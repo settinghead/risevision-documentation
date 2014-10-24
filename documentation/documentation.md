@@ -41,13 +41,21 @@ Because Viewer API is designed with unattended apps in mind, there is no require
 
 ###Widget API
 
+Facilitates development of support applications running on local displays and managing content caching, display control, etc.
+
+You can use Player API to create a custom Player app that would start Viewer (standard or custom), cache files, turn the display hardware on and off etc on any OS.
+
+###Widget API
 
 
+[to be added]
 
 
 ###Store API
 
-Allows client applications to authorize with Rise Store as well as look up status of Rise Store Products.
+Allows client applications to authorize with Rise Store and 3rd party application servers as well as look up status of Rise Store Products.
+
+Any app or widget sold from Rise Store will need to use Store API in order to check their authorization based on purchase status and customer account standing. 
 
 
 Rise Vision APIs are [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer), they can be used on any platform using any development environment for as long as it supports sending and receiving data via HTTP protocol. 
