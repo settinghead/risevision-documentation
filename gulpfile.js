@@ -135,7 +135,6 @@ gulp.task('watch', function () {
     gulp.watch(['*.yml','index.html', '_layouts/*.html', '_includes/*.html', '_posts/**/*.md', 'assets/**/*', 'documentation/**/*', 'apps/**/*'], ['jekyll-rebuild-dev']);
 });
 
-
 //------------------------- Deployment --------------------------------
 var options = {
             prod: {
