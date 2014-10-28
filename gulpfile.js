@@ -180,7 +180,7 @@ gulp.task("deploy",['cname'], function () {
 gulp.task("cname", function() {
     gulp.src("./cname-config/CNAME-"+env)
     .pipe(rename("CNAME"))
-    .pipe(gulp.dest("./"));
+    .pipe(gulp.dest("./_site"));
 });
 
 
