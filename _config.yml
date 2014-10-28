@@ -30,6 +30,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - risevision-documentation.iml
+  - cname
 
 
 # Default categories (in order) to appear in the navigation
