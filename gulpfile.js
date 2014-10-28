@@ -16,6 +16,7 @@ var bower       = require('bower');
 var del         = require('delete');
 var deploy      = require('gulp-gh-pages');
 var argv        = require('minimist')(process.argv.slice(2));
+var rename      = require("gulp-rename");
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
@@ -172,6 +173,16 @@ gulp.task("deploy", function () {
     return gulp.src("./_site/**/*")
         .pipe(deploy(options[env]));
 });
+
+/**
+ * Copy and rename CNAME file depending on the target environment
+ */
+gulp.task("build", ['jekyll-build'], function() {
+    gulp.src("./cname-config/CNAME-"+env)
+    .pipe(rename("CNAME"))
+    .pipe(gulp.dest("./_site"));
+});
+
 
 /**
  * Do a bower clean install
