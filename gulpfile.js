@@ -159,7 +159,7 @@ var options = {
 /**
  *  Deploy to gh-pages
  */
-gulp.task("deploy", function () {
+gulp.task("deploy", ['cname'], function () {
 
     // Remove temp folder created by gulp-gh-pages
     if (argv.clean) {
@@ -177,7 +177,7 @@ gulp.task("deploy", function () {
 /**
  * Copy and rename CNAME file depending on the target environment
  */
-gulp.task("cname", ['cname'], function() {
+gulp.task("cname", function() {
     gulp.src("./cname-config/CNAME-"+env)
     .pipe(rename("CNAME"))
     .pipe(gulp.dest("./_site"));
