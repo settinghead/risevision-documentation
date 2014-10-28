@@ -46,7 +46,7 @@ gulp.task('bundle-install', function (done) {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', ['cname'], function (done) {
+gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
 
 	  var config = '';
@@ -177,7 +177,7 @@ gulp.task("deploy", function () {
 /**
  * Copy and rename CNAME file depending on the target environment
  */
-gulp.task("cname", function() {
+gulp.task("cname", ['cname'], function() {
     gulp.src("./cname-config/CNAME-"+env)
     .pipe(rename("CNAME"))
     .pipe(gulp.dest("./_site"));
