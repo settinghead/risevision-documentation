@@ -7,6 +7,12 @@ angular.module("risevision.developer.hub")
     ["$scope", "$state", "$timeout", "createApp", "userState", "$log",
     function($scope,$state, $timeout, createApp, userState, $log){
 
+        $scope.info = function() {
+            $modal.open({
+                templateUrl: 'apps/client-id-info.html'
+            });
+        };
+
         $scope.save = function(app) {
             createApp(userState.getUserCompanyId(), userState.getUsername(), app).then(function(result) {
                 $state.go("apps.list");
