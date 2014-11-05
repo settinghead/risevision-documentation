@@ -50,7 +50,7 @@
             var subCat = $(subCats[i]);
             var category = subCat[0].getAttribute("category");
             var title = '' + subCat[0].getAttribute("title");
-            title = title.replace(/ /g,'');
+            title = title.replace(/ /g,'-');
 
             if (url.indexOf(category) === -1)
                 subCat.find(".js-sub-nav").hide();

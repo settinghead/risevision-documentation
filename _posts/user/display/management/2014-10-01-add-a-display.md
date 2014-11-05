@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: user-post
 title:  "Add a Display"
 date:   2014-10-13 10:52:00
-category: user/display
+category: user/display/management
 parent-order: 2
 order: 1
 ---

@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: user-post
 title:  "Upload an Item"
 date:   2014-10-13 10:52:00
-category: user/storage
+category: user/storage/management
 parent-order: 2
 order: 1
 ---

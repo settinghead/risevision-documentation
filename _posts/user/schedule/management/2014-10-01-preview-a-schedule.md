@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: user-post
 title:  "Preview a Schedule"
 date:   2014-10-13 10:52:00
-category: user/schedule
+category: user/schedule/management
 parent-order: 2
 order: 2
 ---

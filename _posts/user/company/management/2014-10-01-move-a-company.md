@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: user-post
 title:  "Move a Company"
 date:   2014-10-13 10:52:00
-category: user/company
+category: user/company/management
 parent-order: 2
 order: 4
 ---

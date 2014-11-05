@@ -29,5 +29,10 @@ angular.module("risevision.documentation")
                 templateUrl: function(params){ return "{{ site.baseurl }}/user/" + params.category + "/" + params.post; },
                 controller: 'DocumentationController'
             })
+            .state('user-post-sub', {
+                url: '/user/:category/:subCategory/:post',
+                templateUrl: function(params){ return "{{ site.baseurl }}/user/" + params.category + "/" + params.subCategory + "/" + params.post; },
+                controller: 'DocumentationController'
+            })
 
     }]);
