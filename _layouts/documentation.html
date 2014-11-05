@@ -4,7 +4,11 @@
         <a class="app-title-links" href="#/apps">
             <i class="fa fa-home"></i> Developer
         </a>
-        <h1>{('DEVELOPER_DOCS' | translate)}</h1>
+        {% if page.type == 'developer' %}
+            <h1>{('DEVELOPER_DOCS' | translate)}</h1>
+        {% elsif page.type == 'user' %}
+            <h1>{('USER_DOCS' | translate)}</h1>
+        {% endif %}
     </div>
 
     <div class="global-actions">
