@@ -62,6 +62,9 @@ developerSections: [
       ['developer/widget-api/widget', 'Widget'],
       ['developer/widget-api/widget-tutorials', 'Widget Tutorials']
     ]],
+    ['developer/presentations', 'Presentations', [
+      ['developer/presentations/multi-page', 'Multi-Page Presentations']
+    ]],
     ['developer/store-api', 'Store API', [
       ['developer/store-api/store', 'Store']
     ]],
