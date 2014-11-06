@@ -14,7 +14,4 @@ angular.module("risevision.documentation",["ui.router","risevision.common.header
 
 
         $translateProvider.preferredLanguage('en');
-    }])
-    .config(["$locationProvider", function($locationProvider) {
-        $locationProvider.html5Mode(true);
     }]);

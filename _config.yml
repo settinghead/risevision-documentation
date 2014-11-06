@@ -10,6 +10,7 @@ url: "http://rise-vision.github.io" # the base hostname & protocol for your site
 twitter_username: risevision
 github_username:  RiseVision
 hashTag: "#"
+html5mode: "false"
 
 # Build settings
 markdown: redcarpet

@@ -1,3 +1,4 @@
 # Production Site settings
 baseurl: "" # the subpath of your site, e.g. /blog/
 hashTag: ""
+html5mode: "true"
