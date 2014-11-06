@@ -9,6 +9,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://rise-vision.github.io" # the base hostname & protocol for your site
 twitter_username: risevision
 github_username:  RiseVision
+hashTag: "#"
 
 # Build settings
 markdown: redcarpet

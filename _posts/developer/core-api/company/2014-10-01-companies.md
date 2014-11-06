@@ -7,49 +7,49 @@ parent-order: 0
 order: 0
 ---
 
-#### [core.company.get](#{% post_url /developer/core-api/company/2014-10-01-core.company.get %})
+#### [core.company.get]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.get %})
 
 Returns the complete Company object by **id**.
 
 ***
 
-#### [core.company.lookup](#{% post_url /developer/core-api/company/2014-10-01-core.company.lookup %})
+#### [core.company.lookup]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.lookup %})
 
 Returns the complete Company object by **authKey**.
 
 ***
 
-#### [core.company.list](#{% post_url /developer/core-api/company/2014-10-01-core.company.list %})
+#### [core.company.list]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.list %})
 
 Lists all Companies under the given Company.
 
 ***
 
-#### [core.company.add](#{% post_url /developer/core-api/company/2014-10-01-core.company.add %})
+#### [core.company.add]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.add %})
 
 Adds a new Company.
 
 ***
 
-#### [core.company.update](#{% post_url /developer/core-api/company/2014-10-01-core.company.update %})
+#### [core.company.update]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.update %})
 
 Updates the existing Company.
 
 ***
 
-#### [core.company.move](#{% post_url /developer/core-api/company/2014-10-01-core.company.move %})
+#### [core.company.move]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.move %})
 
 Moves the Company under a new parent Company in the hierarchy.
 
 ***
 
-#### [core.company.delete](#{% post_url /developer/core-api/company/2014-10-01-core.company.delete %})
+#### [core.company.delete]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.delete %})
 
 Deletes the Company.
 
 ***
 
-#### [core.company.delete](#{% post_url /developer/core-api/company/2014-10-01-core.company.regenerateField %})
+#### [core.company.delete]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-core.company.regenerateField %})
 
 Regenerates various Company keys.
 
