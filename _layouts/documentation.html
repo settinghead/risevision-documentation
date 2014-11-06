@@ -1,9 +1,6 @@
 <!-- App Header -->
 <div class="app-header">
     <div class="app-title">
-        <a class="app-title-links" href="#/apps">
-            <i class="fa fa-home"></i> Developer
-        </a>
         {% if page.type == 'developer' %}
             <h1>{% raw %}  {{'DEVELOPER_DOCS' | translate}} {% endraw %}</h1>
         {% elsif page.type == 'user' %}
