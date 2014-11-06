@@ -59,7 +59,8 @@ developerSections: [
       ['developer/player-api/viewer', 'Viewer']
     ]],
     ['developer/widget-api', 'Widget API', [
-      ['developer/widget-api/widget', 'Widget']
+      ['developer/widget-api/widget', 'Widget'],
+      ['developer/widget-api/widget-tutorials', 'Widget Tutorials']
     ]],
     ['developer/store-api', 'Store API', [
       ['developer/store-api/store', 'Store']
