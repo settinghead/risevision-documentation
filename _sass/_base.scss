@@ -1,3 +1,5 @@
+$brand-primary: #2d60ad;
+
 .documentation {
   img { width: 100%; }
 
@@ -12,28 +14,86 @@
 /**
  * Documentation Sidebar
  */
-.docs-sidebar {
+.docs-sidebar-container {
   position: absolute;
   width: 25%;
   top: 0;
   left: 0;
-  display: block;
+  bottom: 0px;
   min-height: 100%;
   overflow-x: hidden;
   overflow-y: visible;
   background-color: darken(#f4f4f4, 3.25%);
-  padding: 0 0 20px 20px;
+}
 
-  * {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+.notransition {
+  -webkit-transition: none !important;
+     -moz-transition: none !important;
+      -ms-transition: none !important;
+          transition: none !important;
+}
+
+.docs-sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: left 250ms ease-in-out;
+     -moz-transition: left 250ms ease-in-out;
+          transition: left 250ms ease-in-out;
+
+  ul {
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+        border-bottom: 1px solid darken(#f4f4f4, 10%);
+        display: block;
+        cursor: pointer;
+
+        i:before { color: $brand-primary; font-size: 8px; }
+
+        &:hover {
+          background-color: darken(#f4f4f4, 10%);
+          i:before { color: darken($brand-primary, 15%); }
+        }
+      }
+    }
   }
 
-  .nav {
-    h4 { margin-bottom: 10px; margin-top: 20px; }
-    .nav { margin-left: 10px; }
-    h5 { margin-top: 0; }
+  // Top Level Nav
+  .nav-top-ul {
+    position: relative;
+    width: 100%;
+  }
+
+  .sub-nav {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: none;
+
+    &.in {
+      display: block !important;
+    }
+  }
+
+  .sub-nav-link.active {
+    color: darken($brand-primary, 15%);
+    font-weight: bold;
   }
 }
 
