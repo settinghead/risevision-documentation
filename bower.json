@@ -30,7 +30,8 @@
   "resolutions": {
     "jquery": "~1.11.1",
     "lunr.js": "0.5.5",
-    "uri.js": "1.14.1"
+    "uri.js": "1.14.1",
+    "angular": "1.2.26"
   },
   "homepage": "https://github.com/Rise-Vision/risevision-documentation",
   "authors": [
