@@ -19,6 +19,7 @@ var argv        = require('minimist')(process.argv.slice(2));
 var rename      = require("gulp-rename");
 var karma       = require('karma').server;
 var gp          = require("gulp-protractor");
+var modRewrite  = require('connect-modrewrite');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
@@ -84,8 +85,14 @@ gulp.task('jekyll-rebuild-dev', ['jekyll-build'], function () {
  */
 gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
     browserSync({
+        startPath: '/index.html',
         server: {
-            baseDir: '_site'
+            baseDir: '_site',
+            middleware: [
+                modRewrite([
+                    '!\\.\\w+$ /index.html [L]'
+                ])
+            ]
         },
         port: 8000
     });
