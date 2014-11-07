@@ -27,7 +27,9 @@
                                     </a>
                                     <!-- Sub Nav Level 2 -->
                                     <ul class="sub-nav nav-level-2">
-                                        {% for page in site.categories[attr] %}
+                                        {% assign pages = site.categories[attr] | sort:"order"  %}
+                                        {% for page in pages %}
+                                            <script>console.log("{{page.title}}")</script>
                                             {% if page.title == subSection[1] %}
                                                 <li>
                                                     <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
@@ -62,13 +64,16 @@
                     {% else %}
                         {% assign attr = section[0] %}
                         <ul class="sub-nav nav-level-1">
-                            {% for page in site.categories[attr] %}
-                                <li category="{{ attr }}" title="{{ page.title }}">
-                                    <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
-                                        {{ page.title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
+                            {% if site.categories[attr] != null %}
+                                {% assign pages = site.categories[attr] | sort:"order"  %}
+                                {% for page in pages %}
+                                    <li category="{{ attr }}" title="{{ page.title }}">
+                                        <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
+                                            {{ page.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
                             <li class="back-level-1">
                                 <a href="">
                                     <span class="pull-right">
