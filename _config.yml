@@ -70,10 +70,7 @@ developerSections: [
     ]],
     ['developer/common-header', 'Common Header', [
       ['developer/common-header/usage', 'Usage']
-    ]],
-    ['ref', 'Reference'],
-    ['dev', 'Developers'],
-    ['post', 'Posts']
+    ]]
 ]
 
 userSections: [
