@@ -3,8 +3,8 @@ layout: developer-post
 title:  "Widget Parameters"
 date:   2014-11-06 11:08:00
 category: developer/widget-api/widget-tutorials
-parent-order: 1
-order: 3
+parent-order: 0
+order: 4
 ---
 
 There are a few different parameters that are automatically passed to the Widget by the Viewer.
