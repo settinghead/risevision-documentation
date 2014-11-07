@@ -1,6 +1,7 @@
 <!-- App Header -->
 <div class="app-header">
     <div class="app-title">
+
         {% if page.type == 'developer' %}
             <h1>{% raw %}  {{'DEVELOPER_DOCS' | translate}} {% endraw %}</h1>
         {% elsif page.type == 'user' %}
@@ -21,15 +22,17 @@
     <!-- Docs Nav Sidebar -->
     {% include sidebar.html %}
 
-    <!-- Search Results -->
-    {% include search.result.html%}
-
     <!-- Main Content -->
-    <div class="col-md-offset-3 col-md-9">
+    <div id="expand-vertically" class="col-md-offset-3 col-md-9">
         <div class="row">
+            <!-- Search Results -->
+            {% include search.result.html%}
+
+            <!-- Main Content -->
             <div class="content-col">
                 {% include content.html %}
             </div>
+            <!-- Code Sample -->
             <div class="code-sample-col col-md-6">
             </div>
         </div>
@@ -39,36 +42,90 @@
 
 <script type="text/javascript">
     $(function() {
-        var subCats = $(".js-sub-cat");
 
-        for (var i = subCats.length - 1; i >= 0; i--) {
+        // Expand content div to fill vertical space
+        $("#expand-vertically").css('min-height', $(document).height());
+        $(window).resize(function(){
+            $("#expand-vertically").css('min-height', $(document).height());
+        });
 
-            var url = document.URL;
-            var subCat = $(subCats[i]);
-            var category = subCat[0].getAttribute("category");
-            var title = '' + subCat[0].getAttribute("title");
-            title = title.replace(/ /g,'-');
+        var navTopUL = $(".nav-top-ul");
+        var docsSidebar = $(".docs-sidebar");
 
-            if (url.indexOf(category) === -1)
-                subCat.find(".js-sub-nav").hide();
+        // Get the current url
+        var url = document.URL;
+        // Mobile Nav select the current page
+        // in the <select> dropdown
+        $(".docs-nav option").filter(function() {
+            return (url.indexOf($(this).val()) !== -1);
+        }).prop("selected", true);
+        // Desktop Nav highlight the current page
+        $(".sub-nav-link").filter(function() {
+            if (url.indexOf($(this).attr("href")) !== -1) {
+                $(this).addClass("active");
 
-            subCat.find("h5 a").attr("href", "{{site.hashTag}}/" + category + "/" + title.toLowerCase() + '.html');
+                var parents = $(this).parents(".sub-nav");
+                parents.toggleClass("in");
 
-            $('.docs-nav option').filter(function() {
-                return (url.indexOf($(this).val()) !== -1);
-            }).prop('selected', true);
+                docsSidebar.addClass('notransition');
+                docsSidebar.css({
+                    left: parents.length === 2 ? "-200%" : "-100%"
+                });
+                docsSidebar[0].offsetHeight;
+                docsSidebar.removeClass('notransition');
+            }
+        });
 
-        };
+        // Go to Sub Nav Level 1
+        $(".nav-level-1-link").click(function(e) {
+            docsSidebar.css({
+                left: "-100%"
+            });
+            $(this).siblings(".sub-nav.nav-level-1").toggleClass("in");
+            e.stopPropagation();
+        });
+        // Go to Sub Nav Level 2
+        $(".nav-level-2-link").click(function(e) {
+            docsSidebar.css({
+                left: "-200%"
+            });
+            $(this).siblings(".sub-nav.nav-level-2").toggleClass("in");
+            e.stopPropagation();
+        });
+        // Back from level 1
+        $(".back-level-1").click(function(e) {
+            docsSidebar.css({
+                left: "0"
+            });
+            var navLevel1 = $(this).parent();
+            docsSidebar.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () {
+                navLevel1.toggleClass("in");
+                $(this).unbind( "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd" );
+            });
+            e.stopPropagation();
+        });
+        // Back from level 2
+        $(".back-level-2").click(function(e) {
+            docsSidebar.css({
+                left: "-100%"
+            });
+            var navLevel2 = $(this).parent();
+            docsSidebar.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () {
+                navLevel2.toggleClass("in");
+                $(this).unbind( "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd" );
+            });
+            e.stopPropagation();
+        });
     });
 </script>
 
 <script type="text/javascript">
     $(function() {
-        $('#search-query').lunrSearch({
-            indexUrl: '{{ site.baseurl }}/search.json',             // URL of the `search.json` index data for your site
-            results:  '#search-results',          // jQuery selector for the search results container
-            entries:  '.entries',                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
-            template: '#search-results-template'  // jQuery selector for the Mustache.js template
+        $("#search-query").lunrSearch({
+            indexUrl: "{{ site.baseurl }}/search.json",             // URL of the `search.json` index data for your site
+            results:  "#search-results",          // jQuery selector for the search results container
+            entries:  ".entries",                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
+            template: "#search-results-template"  // jQuery selector for the Mustache.js template
         });
     });
 </script>

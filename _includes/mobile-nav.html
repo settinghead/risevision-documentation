@@ -1,24 +1,43 @@
 <div class="form-group add-top visible-xs visible-sm">
+    {% if page.type == 'developer' %}
+        {% assign sections = site.developerSections %}
+    {% elsif page.type == 'user' %}
+        {% assign sections = site.userSections %}
+    {% endif %}
     <select class="form-control docs-nav">
-      {% for section in site.sections %}
+      {% for section in sections %}
             {% assign label = section[1] %}
             {% assign subSections = section[2] %}
 
             <optgroup label="{{ label }}">
+                {% if subSections != null %}
 
-                {% for subSection in subSections %}
-                    {% assign attr = subSection[0] %}
-                        <optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;{{ subSection[1] }}">
-                            {% for page in site.categories[attr] %}
-                                <option value="#{{ page.url }}">
-                                    &nbsp;&nbsp;{{ page.title }}
+                    {% for subSection in subSections %}
+                        {% assign attr = subSection[0] %}
+                            <optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;{{ subSection[1] }}">
+                                {% for page in site.categories[attr] %}
+                                    <option value="#{{ page.url }}">
+                                        &nbsp;&nbsp;{{ page.title }}
+                                    </option>
+                                {% endfor %}
+                                <option disabled>
+                                    ----------------------------------
                                 </option>
-                            {% endfor %}
-                        </optgroup>
-                {% endfor %}
+                            </optgroup>
+                    {% endfor %}
 
+                {% else %}
+                    {% assign attr = section[0] %}
+                    {% for page in site.categories[attr] reversed %}
+                        <option value="#{{ page.url }}">
+                            &nbsp;&nbsp;{{ page.title }}
+                        </option>
+                    {% endfor %}
+                    <option disabled>
+                        ----------------------------------
+                    </option>
+                {% endif %}
             </optgroup>
-
         {% endfor %}
     </select>
 </div>
