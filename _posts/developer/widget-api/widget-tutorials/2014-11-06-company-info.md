@@ -3,8 +3,8 @@ layout: developer-post
 title:  "Getting Information about the Company"
 date:   2014-11-06 11:08:00
 category: developer/widget-api/widget-tutorials
-parent-order: 1
-order: 5
+parent-order: 0
+order: 6
 ---
 
 It is possible to retrieve the Company ID and social connection data for the Company that a Display is associated with. Currently, supported social connections include Foursquare and Twitter.

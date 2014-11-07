@@ -3,8 +3,8 @@ layout: developer-post
 title:  "Handling a Lost Internet Connection"
 date:   2014-11-06 11:08:00
 category: developer/widget-api/widget-tutorials
-parent-order: 1
-order: 6
+parent-order: 0
+order: 7
 ---
 
 When building Widgets, it’s important to handle the situation where the Internet goes down while the Widget is playing. A Widget should never stop playing if the Internet connection is lost. Instead, it should continue cycling through its cached data.

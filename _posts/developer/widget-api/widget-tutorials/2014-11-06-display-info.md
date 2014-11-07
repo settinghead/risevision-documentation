@@ -3,8 +3,8 @@ layout: developer-post
 title:  "Getting Information about the Display"
 date:   2014-11-06 11:08:00
 category: developer/widget-api/widget-tutorials
-parent-order: 1
-order: 4
+parent-order: 0
+order: 5
 ---
 
 There may come a time when a Widget needs to know some information about the Display it is running on. There are two pieces of information that can be requested from the Viewer – the Display ID and the Display address.
