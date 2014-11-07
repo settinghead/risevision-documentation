@@ -9,6 +9,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://rise-vision.github.io" # the base hostname & protocol for your site
 twitter_username: risevision
 github_username:  RiseVision
+hashTag: ""
+html5mode: "true"
 
 # Build settings
 markdown: redcarpet
@@ -57,7 +59,8 @@ developerSections: [
       ['developer/player-api/viewer', 'Viewer']
     ]],
     ['developer/widget-api', 'Widget API', [
-      ['developer/widget-api/widget', 'Widget']
+      ['developer/widget-api/widget', 'Widget'],
+      ['developer/widget-api/widget-tutorials', 'Widget Tutorials']
     ]],
     ['developer/store-api', 'Store API', [
       ['developer/store-api/store', 'Store']

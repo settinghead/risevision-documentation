@@ -11,11 +11,12 @@ Rise Vision provides a number of APIs to help you build digital signage applicat
 
 Allows client applications to view and update digital signage-related objects supported by the Rise Vision platform:
 
-- [Company](#{% post_url /developer/core-api/company/2014-10-01-companies %})
-- [Display](#{% post_url /developer/core-api/display/2014-10-01-displays %})
-- [User](#{% post_url /developer/core-api/user/2014-10-01-users %})
-- [Schedule](#{% post_url /developer/core-api/schedule/2014-10-01-schedules %})
-- [Presentation](#{% post_url /developer/core-api/presentation/2014-10-01-presentations %})
+- [Company]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-companies %})
+- [Display]({{site.hashTag}}{% post_url /developer/core-api/display/2014-10-01-displays %})
+- [User]({{site.hashTag}}{% post_url /developer/core-api/user/2014-10-01-users %})
+- [Schedule]({{site.hashTag}}{% post_url /developer/core-api/schedule/2014-10-01-schedules %})
+- [Presentation]({{site.hashTag}}{% post_url /developer/core-api/presentation/2014-10-01-presentations %})
+  
 
 Relationships between these objects can be described as follows:
 
@@ -23,17 +24,18 @@ Relationships between these objects can be described as follows:
 
 Utility read-only objects, such as:
 
-- [System Message](#{% post_url /developer/core-api/systemmessage/2014-10-01-system-messages %})
-- [Country](#{% post_url /developer/core-api/country/2014-10-01-countries %})
-- [Time Zone](#{% post_url /developer/core-api/country/2014-10-01-countries %})
+- [System Message]({{site.hashTag}}{% post_url /developer/core-api/systemmessage/2014-10-01-system-messages %})
+- [Country]({{site.hashTag}}{% post_url /developer/core-api/country/2014-10-01-countries %})
+- [Time Zone]({{site.hashTag}}{% post_url /developer/core-api/country/2014-10-01-countries %})
 
 are also provided to facilitate building of user interfaces.
 
 Core API is based on [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/java/endpoints/) which you can easily consume from a [Javascript client](https://cloud.google.com/appengine/docs/java/endpoints/consume_js).
 
 You can use Core API to build a wide range of apps from custom UIs for Rise Vision Platform to any kind of background content processing apps with little user interaction.
-It is important to keep in mind that Core API uses OAuth2 to authenticate the user and in most cases the user will be required to log in to start the app.
-In order to use Core API your app needs to have OAuth2 client Id ([here's how to obtain it](#{% post_url /developer/core-api/2014-10-01-clientId %})).
+
+It is important to keep in mind that Core API uses OAuth2 to authenticate the user and in most cases the user will be required to log in to start the app.    
+In order to use Core API your app needs to have OAuth2 client Id ([here's how to obtain it]({{site.hashTag}}{% post_url /developer/core-api/2014-10-01-clientId %})).
 
 *Applications that use Core API:* [Rise Vision Common Header](https://github.com/Rise-Vision/common-header)
 

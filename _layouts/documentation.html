@@ -1,13 +1,11 @@
 <!-- App Header -->
 <div class="app-header">
     <div class="app-title">
-        <a class="app-title-links" href="#/apps">
-            <i class="fa fa-home"></i> Developer
-        </a>
-        {% if page.type == "developer" %}
-            <h1>{("DEVELOPER_DOCS" | translate)}</h1>
-        {% elsif page.type == "user" %}
-            <h1>{("USER_DOCS" | translate)}</h1>
+
+        {% if page.type == 'developer' %}
+            <h1>{% raw %}  {{'DEVELOPER_DOCS' | translate}} {% endraw %}</h1>
+        {% elsif page.type == 'user' %}
+            <h1>{% raw %}{{'USER_DOCS' | translate}}{% endraw %}</h1>
         {% endif %}
     </div>
 
@@ -44,6 +42,7 @@
 
 <script type="text/javascript">
     $(function() {
+
         // Expand content div to fill vertical space
         $("#expand-vertically").css('min-height', $(document).height());
         $(window).resize(function(){
@@ -143,7 +142,7 @@
             <article>
               <h3>
                 {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-                <a href="#{{url}}">{{title}}</a>
+                <a href="{{site.hashTag}}{{url}}">{{title}}</a>
               </h3>
             </article>
           {{/entries}}
