@@ -30,13 +30,13 @@
                                         {% for page in site.categories[attr] %}
                                             {% if page.title == subSection[1] %}
                                                 <li>
-                                                    <a class="sub-nav-link" href="#{{ page.url }}">
+                                                    <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
                                                         Overview
                                                     </a>
                                                 </li>
                                             {% else %}
                                                 <li>
-                                                    <a class="sub-nav-link"  href="#{{ page.url }}">
+                                                    <a class="sub-nav-link"  href="{{site.hashTag}}{{ page.url }}">
                                                         {{ page.title }}
                                                     </a>
                                                 </li>
@@ -64,7 +64,7 @@
                         <ul class="sub-nav nav-level-1">
                             {% for page in site.categories[attr] %}
                                 <li category="{{ attr }}" title="{{ page.title }}">
-                                    <a class="sub-nav-link" href="#{{ page.url }}">
+                                    <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
                                         {{ page.title }}
                                     </a>
                                 </li>
