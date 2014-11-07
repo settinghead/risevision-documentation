@@ -3,8 +3,8 @@ layout: developer-post
 title:  "play, pause and stop Commands"
 date:   2014-11-06 11:08:00
 category: developer/widget-api/widget-tutorials
-parent-order: 1
-order: 2
+parent-order: 0
+order: 3
 ---
 
 ## The *play* Command

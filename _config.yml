@@ -58,10 +58,6 @@ developerSections: [
       ['developer/player-api/player', 'Player'],
       ['developer/player-api/viewer', 'Viewer']
     ]],
-    ['developer/widget-api', 'Widget API', [
-      ['developer/widget-api/widget', 'Widget'],
-      ['developer/widget-api/widget-tutorials', 'Widget Tutorials']
-    ]],
     ['developer/store-api', 'Store API', [
       ['developer/store-api/store', 'Store']
     ]],
@@ -71,6 +67,9 @@ developerSections: [
     ['developer/presentations', 'Presentations', [
       ['developer/presentations/multi-page', 'Multi-Page Presentations'],
       ['developer/presentations/presentation-tutorials', 'Presentation Tutorials']
+    ]],
+    ['developer/widget-api', 'Widgets', [
+      ['developer/widget-api/widget-tutorials', 'Widget Tutorials']
     ]],
     ['developer/common-header', 'Common Header', [
       ['developer/common-header/usage', 'Usage']
