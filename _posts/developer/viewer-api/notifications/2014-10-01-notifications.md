@@ -13,7 +13,7 @@ Requesting Google Channels API Token
 
 ***
 
-#### [C({{site.hashTag}}nnel Signals](#{% post_url /developer/viewer-api/notifications/2014-10-01-signals %})
+#### [Channel Signals]({{site.hashTag}}{% post_url /developer/viewer-api/notifications/2014-10-01-signals %})
 
 Receiving Signals over the Channel
 
