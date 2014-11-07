@@ -64,7 +64,7 @@
                     {% else %}
                         {% assign attr = section[0] %}
                         <ul class="sub-nav nav-level-1">
-                            {% if site.categories[attr].length > 0 %}
+                            {% if site.categories[attr] != null %}
                                 {% assign pages = site.categories[attr] | sort:"order"  %}
                                 {% for page in pages %}
                                     <li category="{{ attr }}" title="{{ page.title }}">
