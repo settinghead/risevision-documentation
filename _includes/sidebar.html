@@ -29,7 +29,6 @@
                                     <ul class="sub-nav nav-level-2">
                                         {% assign pages = site.categories[attr] | sort:"order"  %}
                                         {% for page in pages %}
-                                            <script>console.log("{{page.title}}")</script>
                                             {% if page.title == subSection[1] %}
                                                 <li>
                                                     <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
