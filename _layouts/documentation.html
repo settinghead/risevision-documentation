@@ -2,19 +2,13 @@
 <div class="app-header">
     <div class="app-title">
         {% if page.type == 'developer' %}
-            <a class="app-title-links" href="/developer">
-                <i class="fa fa-home"></i> {% raw %}  {{'DEVELOPER' | translate}} {% endraw %}
-            </a>
             <h1>{% raw %}  {{'DEVELOPER_DOCS' | translate}} {% endraw %}</h1>
         {% elsif page.type == 'user' %}
-            <a class="app-title-links" href="/user">
-                <i class="fa fa-home"></i> {% raw %}  {{'USER' | translate}} {% endraw %}
-            </a>
             <h1>{% raw %}{{'USER_DOCS' | translate}}{% endraw %}</h1>
         {% endif %}
     </div>
 
-    <div class="global-actions">
+    <div class="global-actions no-breadcrumb">
         {% include search.form.html%}
     </div>
 </div>
