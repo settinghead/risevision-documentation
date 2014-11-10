@@ -11,6 +11,9 @@ $brand-primary: #2d60ad;
 }
 
 .documentation {
+  // padding-left: 15px;
+  position: relative;
+
   img { width: 100%; }
 
   pre {
@@ -25,11 +28,14 @@ $brand-primary: #2d60ad;
  * Documentation Sidebar
  */
 .docs-sidebar-container {
-  position: absolute;
-  width: 25%;
+  position: absolute !important;
   top: 0;
   left: 0;
   bottom: 0px;
+  min-height: 100%;
+}
+
+.docs-sidebar-wrapper {
   min-height: 100%;
   overflow-x: hidden;
   overflow-y: visible;
