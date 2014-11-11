@@ -79,9 +79,7 @@ developerSections: [
 userSections: [
     ['user/getting-started', 'Getting Started'],
     ['user/company', 'Company'],
-    ['user/presentation', 'Presentation', [
-      ['user/presentation/management', 'Presentation Management'],
-    ]],
+    ['user/presentation', 'Presentation'],
     ['user/content', 'Content'],
     ['user/display', 'Display', [
       ['user/display/management', 'Display Management'],

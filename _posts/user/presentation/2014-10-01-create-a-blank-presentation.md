@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Create a blank Presentation"
 date:   2014-10-13 10:52:00
-category: user/presentation/management
-parent-order: 2
-order: 1
+category: user/presentation
+order: 2
 ---
 
 To create a presentation:
