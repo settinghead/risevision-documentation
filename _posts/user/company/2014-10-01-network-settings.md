@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Network Settings"
 date:   2014-10-13 10:52:00
-category: user/company/management
-parent-order: 2
-order: 5
+category: user/company
+order: 4
 ---
 
 If you’re a service provider with your own digital signage customers, the Rise Vision platform gives you the ability to create, manage and brand your own customer portal, which we call your network.  With the ability to brand your network, your clients (sub-companies) will see your logo and banner and links, not ours, when they log in to the platform.

@@ -2,8 +2,7 @@
 layout: user-post
 title:  "Preview a Presentation"
 date:   2014-10-13 10:52:00
-category: user/presentation/management
-parent-order: 2
+category: user/presentation
 order: 3
 ---
 

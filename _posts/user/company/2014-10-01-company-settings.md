@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Company Settings"
 date:   2014-10-13 10:52:00
-category: user/company/management
-parent-order: 2
-order: 1
+category: user/company
+order: 2
 ---
 
 **Name / Street / Unit /City / Country / State/Province/Region / Postal Code / Time Zone / Telephone / Fax:**  Enter the details of your company’s name, location and contact information.  This is the address used by some widgets to drive location-specific content to your presentation.
