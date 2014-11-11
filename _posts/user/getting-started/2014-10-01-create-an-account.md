@@ -3,7 +3,6 @@ layout: user-post
 title:  "Create an Account"
 date:   2014-10-13 10:52:00
 category: user/getting-started
-parent-order: 1
 order: 1
 ---
 

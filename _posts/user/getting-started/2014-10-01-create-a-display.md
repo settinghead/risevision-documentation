@@ -3,8 +3,7 @@ layout: user-post
 title:  "Create a Display"
 date:   2014-10-13 10:52:00
 category: user/getting-started
-parent-order: 5
-order: 0
+order: 4
 ---
 
 ###What is a Display?
