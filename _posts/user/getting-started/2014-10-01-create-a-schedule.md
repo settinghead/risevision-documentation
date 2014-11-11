@@ -3,8 +3,7 @@ layout: user-post
 title:  "Create a Schedule"
 date:   2014-10-13 10:52:00
 category: user/getting-started
-parent-order: 4
-order: 0
+order: 3
 ---
 
 ###What is a Schedule

@@ -3,8 +3,7 @@ layout: user-post
 title:  "Create a Presentation"
 date:   2014-10-13 10:52:00
 category: user/getting-started
-parent-order: 3
-order: 0
+order: 2
 ---
 
 ###What is a Presentation?
