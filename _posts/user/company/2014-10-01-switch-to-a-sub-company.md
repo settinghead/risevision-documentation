@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Switch to a Sub-Company"
 date:   2014-10-13 10:52:00
-category: user/company/management
-parent-order: 2
-order: 3
+category: user/company
+order: 6
 ---
 
 As a parent company, you can switch to the Settings page of any of your sub-companies whenever you want to manage that sub-company’s users, presentations, widgets, storage, displays or schedules.

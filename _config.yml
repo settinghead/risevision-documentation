@@ -78,9 +78,7 @@ developerSections: [
 
 userSections: [
     ['user/getting-started', 'Getting Started'],
-    ['user/company', 'Company', [
-      ['user/company/management', 'Company Management'],
-    ]],
+    ['user/company', 'Company'],
     ['user/presentation', 'Presentation', [
       ['user/presentation/management', 'Presentation Management'],
     ]],

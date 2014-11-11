@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Move a Company"
 date:   2014-10-13 10:52:00
-category: user/company/management
-parent-order: 2
-order: 4
+category: user/company
+order: 3
 ---
 
 If a user already has a company on the Rise Vision platform and wants to be part of your network, you can make it a sub-company of your network by moving it.  You will need the Authentication Key of the company you wish to move.
