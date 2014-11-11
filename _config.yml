@@ -9,8 +9,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://rise-vision.github.io" # the base hostname & protocol for your site
 twitter_username: risevision
 github_username:  RiseVision
-hashTag: ""
-html5mode: "true"
+hashTag: "#"
+html5mode: "false"
 
 # Build settings
 markdown: redcarpet
@@ -104,7 +104,7 @@ userSections: [
 
 
 # Dates are not included in permalinks
-permalink: none
+permalink: /:categories/:title
 
 gems:
   - jekyll-sitemap
