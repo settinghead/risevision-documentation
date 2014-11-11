@@ -2,8 +2,7 @@
 layout: user-post
 title:  "Delete an item from Storage"
 date:   2014-10-13 10:52:00
-category: user/storage/management
-parent-order: 2
+category: user/storage
 order: 4
 ---
 

@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Download from Storage"
 date:   2014-10-13 10:52:00
-category: user/storage/management
-parent-order: 2
-order: 3
+category: user/storage
+order: 5
 ---
 
 You can download a copy of any file from Storage to your computer.  To download a file:

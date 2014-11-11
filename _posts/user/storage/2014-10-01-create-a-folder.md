@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Create a Folder"
 date:   2014-10-13 10:52:00
-category: user/storage/management
-parent-order: 2
-order: 2
+category: user/storage
+order: 3
 ---
 
 To keep your files organized, you can create folders in Storage.  To do so:

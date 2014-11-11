@@ -83,20 +83,11 @@ userSections: [
       ['user/presentation/management', 'Presentation Management'],
     ]],
     ['user/content', 'Content'],
-    ['user/display', 'Display', [
-      ['user/display/management', 'Display Management'],
-    ]],
-    ['user/user', 'User'],
-    ['user/schedule', 'Schedule', [
-       ['user/schedule/management', 'Schedule Management'],
-    ]],
+    ['user/display', 'Display'],
+    ['user/schedule', 'Schedule'],
     ['user/player', 'Player'],
-    ['user/users', 'Users', [
-      ['user/users/management', 'User Management'],
-    ]],
-    ['user/storage', 'Storage', [
-      ['user/storage/management', 'Storage Management'],
-    ]],
+    ['user/users', 'Users'],
+    ['user/storage', 'Storage'],
     ['user/alerts', 'Alerts'],
 ]
 
