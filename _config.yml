@@ -104,7 +104,7 @@ userSections: [
 
 
 # Dates are not included in permalinks
-permalink: none
+permalink: /:categories/:title
 
 gems:
   - jekyll-sitemap
