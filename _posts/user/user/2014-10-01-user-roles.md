@@ -2,9 +2,8 @@
 layout: user-post
 title:  "User Roles"
 date:   2014-10-13 10:52:00
-category: user/users/management
-parent-order: 2
-order: 3
+category: user/users
+order: 2
 ---
 
 **Editor:**	Can create and edit presentations, but cannot change presentations to “Published”.
@@ -17,6 +16,5 @@ order: 3
 
 **Purchaser:**	Can purchase products for your company from the Rise Vision store.
 
-**Billing Administrator:**	
 
 

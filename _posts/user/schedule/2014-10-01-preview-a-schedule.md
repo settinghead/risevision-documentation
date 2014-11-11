@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Preview a Schedule"
 date:   2014-10-13 10:52:00
-category: user/schedule/management
-parent-order: 2
-order: 2
+category: user/schedule
+order: 4
 ---
 
 1. From the list of schedules on the Schedules page, click the name of the schedule that you want to preview.  This opens the properties page for that schedule.

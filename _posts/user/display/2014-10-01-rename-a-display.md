@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Rename a Display"
 date:   2014-10-13 10:52:00
-category: user/display/management
-parent-order: 2
-order: 3
+category: user/display
+order: 4
 ---
 
 1. From the list of displays on the Displays page, click the name of the display that you want to rename.  This opens the properties page for that display.
