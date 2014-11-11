@@ -10,6 +10,7 @@ angular.module("risevision.documentation")
 
         $urlRouterProvider.rule(function ($injector, $location) {
             var path = $location.url();
+            console.log("PATH: "+path);
 
             // check to see if the path has a trailing slash
             if ('/' === path[path.length - 1]) {
