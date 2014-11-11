@@ -2,9 +2,8 @@
 layout: user-post
 title:  "Delete a User"
 date:   2014-10-13 10:52:00
-category: user/users/management
-parent-order: 2
-order: 2
+category: user/users
+order: 4
 ---
 
 ###Delete a User

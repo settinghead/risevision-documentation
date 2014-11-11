@@ -3,8 +3,7 @@ layout: user-post
 title:  "What is a User"
 date:   2014-10-13 10:52:00
 category: user/users
-parent-order: 1
-order: 0
+order: 1
 ---
 
 
