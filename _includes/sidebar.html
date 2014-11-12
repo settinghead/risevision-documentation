@@ -27,9 +27,9 @@
                                         <!-- Sub Nav Level 2 -->
                                         <ul class="sub-nav nav-level-2">
                                             {% assign pages = site.categories[attr] | sort:"order"  %}
+                                            <script> $("#{{ subSection[1] | replace: ' ', ''}}Link").attr("href","{{site.hashTag}}{{ pages[0].url }}") </script>
                                             {% for page in pages %}
                                                 {% if page.title == subSection[1] %}
-                                                    <script> $("#{{ subSection[1] | replace: ' ', ''}}Link").attr("href","{{site.hashTag}}{{ page.url }}") </script>
                                                     <li>
                                                         <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
                                                             Overview
