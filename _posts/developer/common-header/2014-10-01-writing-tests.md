@@ -2,9 +2,9 @@
 layout: developer-post
 title:  "Setting Up Test Environment"
 date:   2014-10-01 10:52:00
-category: developer/common-header/usage
+category: developer/common-header
 parent-order: 0
-order: 4
+order: 5
 ---
 
 ## End-to-End testing
