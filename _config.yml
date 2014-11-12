@@ -58,22 +58,14 @@ developerSections: [
       ['developer/player-api/player', 'Player'],
       ['developer/player-api/viewer', 'Viewer']
     ]],
-    ['developer/store-api', 'Store API', [
-      ['developer/store-api/store', 'Store']
-    ]],
-    ['developer/storage-api', 'Storage Api', [
-      ['developer/storage-api/storage', 'Storage']
-    ]],
+    ['developer/store-api', 'Store API'],
+    ['developer/storage-api', 'Storage Api'],
     ['developer/presentations', 'Presentations', [
       ['developer/presentations/multi-page', 'Multi-Page Presentations'],
       ['developer/presentations/presentation-tutorials', 'Presentation Tutorials']
     ]],
-    ['developer/widget-api', 'Widgets', [
-      ['developer/widget-api/widget-tutorials', 'Widget Tutorials']
-    ]],
-    ['developer/common-header', 'Common Header', [
-      ['developer/common-header/usage', 'Usage']
-    ]]
+    ['developer/widget-api', 'Widgets'],
+    ['developer/common-header', 'Common Header']
 ]
 
 userSections: [
