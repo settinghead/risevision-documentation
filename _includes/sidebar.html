@@ -13,7 +13,7 @@
                     {% assign subSections = section[2] %}
 
                     <li>
-                        <a class="nav-level-1-link" href="">
+                        <a class="nav-level-1-link" href="" id="{{ label | replace: ' ', ''}}Link">
                             <span class="pull-right"><i class="fa fa-chevron-right"></i></span> {{ label }}
                         </a>
                             <!-- Sub Nav Level 1 -->
@@ -21,12 +21,13 @@
                                 {% for subSection in subSections %}
                                     {% assign attr = subSection[0] %}
                                     <li class="js-sub-cat" category="{{ attr }}" title="{{ subSection[1] }}">
-                                        <a href="" class="nav-level-2-link">
+                                        <a href="" id="{{ subSection[1] | replace: ' ', ''}}Link" class="nav-level-2-link">
                                             <span class="pull-right"><i class="fa fa-chevron-right"></i></span> {{ subSection[1] }}
                                         </a>
                                         <!-- Sub Nav Level 2 -->
                                         <ul class="sub-nav nav-level-2">
                                             {% assign pages = site.categories[attr] | sort:"order"  %}
+                                            <script> $("#{{ subSection[1] | replace: ' ', ''}}Link").attr("href","{{site.hashTag}}{{ pages[0].url }}") </script>
                                             {% for page in pages %}
                                                 {% if page.title == subSection[1] %}
                                                     <li>
@@ -55,7 +56,9 @@
                                 {% assign attr = section[0] %}
                                 {% if site.categories[attr] != null %}
                                     {% assign pages = site.categories[attr] | sort:"order"  %}
+                                    <script> $("#{{ label | replace: ' ', ''}}Link").attr("href","{{site.hashTag}}{{ pages[0].url }}") </script>
                                     {% for page in pages %}
+
                                         <li category="{{ attr }}" title="{{ page.title }}">
                                             <a class="sub-nav-link" href="{{site.hashTag}}{{ page.url }}">
                                                 {{ page.title }}
