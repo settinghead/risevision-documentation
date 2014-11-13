@@ -75,7 +75,9 @@ userSections: [
     ['user/content', 'Content'],
     ['user/display', 'Display'],
     ['user/schedule', 'Schedule'],
-    ['user/player', 'Player'],
+    ['user/player', 'Player',[
+      ['user/player/chrome-app','Chrome App Player']
+    ]],
     ['user/users', 'Users'],
     ['user/storage', 'Storage'],
     ['user/alerts', 'Alerts'],
