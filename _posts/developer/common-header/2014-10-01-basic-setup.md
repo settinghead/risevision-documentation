@@ -2,9 +2,9 @@
 layout: developer-post
 title:  "Basic Setup"
 date:   2014-10-01 10:52:00
-category: developer/common-header/usage
+category: developer/common-header
 parent-order: 0
-order: 1
+order: 2
 ---
 
 In order to use Common Header in your Angular app, you need to do all of the following:

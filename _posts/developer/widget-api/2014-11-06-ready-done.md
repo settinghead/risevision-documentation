@@ -2,7 +2,7 @@
 layout: developer-post
 title:  "ready and done Events"
 date:   2014-11-06 11:08:00
-category: developer/widget-api/widget-tutorials
+category: developer/widget-api
 parent-order: 0
 order: 2
 ---

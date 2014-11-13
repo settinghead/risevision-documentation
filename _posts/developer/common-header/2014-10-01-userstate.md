@@ -2,9 +2,9 @@
 layout: developer-post
 title:  "userState"
 date:   2014-10-01 10:52:00
-category: developer/common-header/usage
+category: developer/common-header
 parent-order: 0
-order: 2
+order: 3
 ---
 
 ```userState``` is an AngularJS singleton that stays at the core of Common Header infrastructure.

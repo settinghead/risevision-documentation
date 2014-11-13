@@ -2,7 +2,7 @@
 layout: developer-post
 title:  "Getting Information about the Display"
 date:   2014-11-06 11:08:00
-category: developer/widget-api/widget-tutorials
+category: developer/widget-api
 parent-order: 0
 order: 5
 ---
@@ -16,7 +16,7 @@ To request the Display ID, make the following RPC call:
 gadgets.rpc.call("", "rsparam_get", null, id, "displayId");
 ```
 
-where `id` is the ID of the Widget. You can read about how to retrieve a Widget's ID [here](#{% post_url /developer/widget-api/widget-tutorials/2014-11-06-widget-parameters %}).
+where `id` is the ID of the Widget. You can read about how to retrieve a Widget's ID [here](#{% post_url /developer/widget-api/2014-11-06-widget-parameters %}).
 
 ## Requesting the Display Address
 To request the address of the Display, simply swap out the last parameter:
