@@ -49,12 +49,12 @@ developerSections: [
       ['developer/core-api/schedules', 'Schedules'],
       ['developer/core-api/systemmessages', 'System Messages']
     ]],
-    ['developer/content-api', 'Content API', [
+    ['developer/viewer-api', 'Content API', [
       ['developer/viewer-api/content', 'Content'],
       ['developer/viewer-api/notifications', 'Notifications']
     ]],
-    ['developer/viewer-api', 'Viewer API', [
-      ['developer/viewer-api/presentations', 'Presentations']
+    ['developer/content-api', 'Content API', [
+      ['developer/content-api/presentations', 'Presentations']
     ]],
     ['developer/player-api', 'Player API', [
       ['developer/player-api/cache', 'Cache'],
