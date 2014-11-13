@@ -1,6 +1,8 @@
 ---
 layout: documentation
 type: developer
+excerpt: "Learn how to use the Rise Vision APIs to build digital signage applications and widgets"
+title: "Rise Vision Developer Documentation | Rise Vision API"
 ---
 ##Introduction
 

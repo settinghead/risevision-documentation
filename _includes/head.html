@@ -7,4 +7,29 @@
     <link rel="icon" href="http://www.risevision.com/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.risevision.com/favicon.ico" type="image/x-icon">
 
+
+    <!-- *** Meta Tag *** -->
+    <!-- Place this data between the <head> tags of your website -->
+    <title ng-bind="title"></title>
+
+    <meta name="description" content="{% raw %}{{description}}{% endraw %}" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{% raw %}{{title}}{% endraw %}">
+    <meta itemprop="description" content="{% raw %}{{description}}{% endraw %}">
+    <meta itemprop="image" content="{% raw %}{{image}}{% endraw %}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@RiseVision">
+    <meta name="twitter:title" content="{% raw %}{{title}}{% endraw %}">
+    <meta name="twitter:description" content="{% raw %}{{description}}{% endraw %}">
+    <meta name="twitter:image:src" content="{% raw %}{{image}}{% endraw %}">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Rise Vision User Documentation" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{% raw %}{{url}}{% endraw %}" />
+    <meta property="og:image" content="{% raw %}{{image}}{% endraw %}" />
+    <meta property="og:description" content="{% raw %}{{description}}{% endraw %}" />
 </head>
