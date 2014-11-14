@@ -161,14 +161,14 @@ $brand-primary: #2d60ad;
 }
 
 .github-sample-reference .meta-info {
-  padding: 10px;
   word-wrap: break-word;
 }
 
-.github-sample-reference .author-info {
-  float: right;
-  padding: 10px;
+.author-info, .meta-info {
+  font-size: 12px;
 }
+
+
 
 #addDescriptionTextArea {
   width: 30em;
@@ -178,3 +178,5 @@ $brand-primary: #2d60ad;
 .top-buffer {
   margin-top: 20px;
 }
+
+
