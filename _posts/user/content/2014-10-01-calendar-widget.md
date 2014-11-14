@@ -6,6 +6,7 @@ category: user/content
 order: 1
 ---
 
+##What it does
 The Google Calendar Widget for digital signage allows you to show events from a Google Calendar in a Presentation.
 
 You can take an event from your Google Calendar similar to the one shown below
@@ -20,7 +21,7 @@ You’ll need the ID from the Google Calendar you wish to show events from. Also
 
 Obtaining the Calendar ID and checking the permissions can be done from the calendar settings.
 
-###How to access the calendar settings
+##How to access the calendar settings
 1. Select the drop down menu from the calendar
 2. Select “Calendar settings”
 3. get cal id 1 Google Calendar
@@ -28,7 +29,7 @@ Obtaining the Calendar ID and checking the permissions can be done from the cale
 ![Step 1]({{ site.baseurl }}/assets/images/google-calendar-widget-images/calendar-settings.png)
 
 
-###How to set a calendar to be public
+##How to set a calendar to be public
 From the Calendar settings page;
 
 1. Select the “Share this calendar” tab
@@ -39,7 +40,7 @@ From the Calendar settings page;
 
  
 
-###How to find a Calendar ID
+##How to find a Calendar ID
 
 From Calendar settings page;
 
