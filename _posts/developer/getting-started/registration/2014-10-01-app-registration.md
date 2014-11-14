@@ -2,7 +2,7 @@
 layout: developer-post
 title:  "How To Register an App"
 date:   2014-10-01 10:52:00
-category: developer/getting-started
+category: developer/getting-started/registration
 parent-order: 0
 order: 0
 ---
