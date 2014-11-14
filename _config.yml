@@ -40,6 +40,9 @@ exclude:
 
 # Default categories (in order) to appear in the navigation
 developerSections: [
+	['developer/getting-started', 'Getting Started', [
+      ['developer/getting-started/registration', 'Registration']
+    ]],
     ['developer/core-api', 'Core API', [
       ['developer/core-api/companies', 'Companies'],
       ['developer/core-api/displays', 'Displays'],
