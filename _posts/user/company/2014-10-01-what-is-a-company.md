@@ -1,6 +1,6 @@
 ---
 layout: user-post
-title:  "What is a Company"
+title:  "What is a Company?"
 date:   2014-10-13 10:52:00
 category: user/company
 order: 1
