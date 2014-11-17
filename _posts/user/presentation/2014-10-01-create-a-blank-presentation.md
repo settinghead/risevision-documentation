@@ -1,6 +1,6 @@
 ---
 layout: user-post
-title:  "Create a blank Presentation"
+title:  "Create a Blank Presentation"
 date:   2014-10-13 10:52:00
 category: user/presentation
 order: 2

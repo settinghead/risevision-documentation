@@ -1,6 +1,6 @@
 ---
 layout: user-post
-title:  "What are Alerts"
+title:  "What are Alerts?"
 date:   2014-10-13 10:52:00
 category: user/alerts
 order: 1

@@ -1,6 +1,6 @@
 ---
 layout: user-post
-title:  "What is Storage"
+title:  "What is Storage?"
 date:   2014-10-13 10:52:00
 category: user/storage
 order: 1

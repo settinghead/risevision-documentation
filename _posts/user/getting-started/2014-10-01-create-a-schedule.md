@@ -6,7 +6,7 @@ category: user/getting-started
 order: 3
 ---
 
-###What is a Schedule
+###What is a Schedule?
 The Rise Vision platform gives you the ability to show more than one presentation or web page on any display, by allowing you to create schedules. 
 
 A schedule is a defined list of presentations and/or URLs for a display, and it specifies both the order and the duration of each one’s appearance on the screen. You can also assign multiple schedules to a display (or group of displays), and control each schedule’s start and end times, start and end dates, and recurrence. 
