@@ -7,9 +7,8 @@ order: 2
 ---
 
 ##What it does
-The U.S. Earnings Calendar Widget provides a live stream of quarterly earnings announcements for NYSE and NASDAQ listed companies as they happen throughout the trading day. For each announcement, you will see analysts' consensus earnings per share and revenue estimates, as well as the company's actuals and year-over-year trends. Data for this widget is provided by [Analyst Ratings Network (ARN)](http://www.analystratings.net/).
-##What it costs
-This premium widget is available for $10.00 USD per display per month.
+The U.S. Earnings Calendar Widget provides a live stream of quarterly earnings announcements for NYSE and NASDAQ listed companies as they happen throughout the trading day. For each announcement, you will see analysts' consensus earnings per share and revenue estimates, as well as the company's actuals and year-over-year trends. Data for this widget is provided by [Analyst Ratings Network (ARN)](http://www.analystratings.net/). 
+
 ##How to add it to a presentation
 To put this widget on a display:
 
