@@ -66,7 +66,7 @@ developerSections: [
       ['developer/player-api/viewer', 'Viewer']
     ]],
     ['developer/store-api', 'Store API'],
-    ['developer/storage-api', 'Storage Api'],
+    ['developer/storage-api', 'Storage API'],
     ['developer/presentations', 'Presentations', [
       ['developer/presentations/multi-page', 'Multi-Page Presentations'],
       ['developer/presentations/presentation-tutorials', 'Presentation Tutorials']
