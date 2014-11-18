@@ -1,6 +1,6 @@
 ---
 layout: developer-post
-title:  "Developer's Manual"
+title:  "Common Header"
 date:   2014-10-01 10:52:00
 category: developer/common-header
 parent-order: 0
@@ -17,8 +17,8 @@ Rise Vision Common Header works in conjunction with Rise Vision, the digital sig
 
 At this stage Chrome is the only browser that this project and Rise Vision supports.
 
-- [FAQ]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-faq %})
-- [Basic Setup Guide]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-basic-setup %})
+- [Development FAQ]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-development-faq %})
+- [Basic Setup Guide]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-basic-setup-guide %})
 - [userState]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-userstate %})
 - [Events & Watches]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-events-watches %})
-- [Writing Tests for Your App]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-writing-tests %})
+- [Setting Up Test Environment]({{site.hashTag}}{% post_url /developer/common-header/2014-10-01-setting-up-test-environment %})

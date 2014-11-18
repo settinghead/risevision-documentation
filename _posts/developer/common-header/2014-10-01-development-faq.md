@@ -1,6 +1,6 @@
 ---
 layout: developer-post
-title:  "Develpment FAQ"
+title:  "Development FAQ"
 date:   2014-10-01 10:52:00
 category: developer/common-header
 parent-order: 0
