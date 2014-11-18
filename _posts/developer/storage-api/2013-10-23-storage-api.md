@@ -1,6 +1,6 @@
 ---
 layout: developer-post
-title:  "Storage Api"
+title:  "Storage API"
 date:   2014-10-23 10:52:00
 category: developer/storage-api
 parent-order: 0
