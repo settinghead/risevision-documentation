@@ -141,7 +141,7 @@ gets the bandwidth of the google storage bucket for the given company-id. (requi
 
 ***
 
-#### [cstorage.getResumableUploadURI]({{site.hashTag}}{% post_url /developer/storage-api/2014-10-23-storage.getResumableUploadURI %})
+#### [storage.getResumableUploadURI]({{site.hashTag}}{% post_url /developer/storage-api/2014-10-23-storage.getResumableUploadURI %})
 
 GET
 
