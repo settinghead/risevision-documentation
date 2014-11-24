@@ -29,7 +29,7 @@ Here is an example of a self-contained html page that you can run on localhost:8
 
 _note this will not work on localhost (localhost:80) as it is not an accepted origin for google to authenticate to our servers with. Use localhost:8888_
 
-_this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693 please plug in your own for it._
+_this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693 please use your own Company Id instead._
 
 _Company Id can be found in the "Settings" area of rva.risevision.com in the URL_
 
