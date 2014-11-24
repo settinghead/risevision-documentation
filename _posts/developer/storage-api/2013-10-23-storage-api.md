@@ -96,9 +96,9 @@ Below are the available methods with gapi.client once gapi is properly loaded:
 
 POST
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/bucket?companyId={companyId}
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId={companyId}
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
 
  
 Adds a new bucket under the given company-id. (requires Authorization)
@@ -109,9 +109,9 @@ Adds a new bucket under the given company-id. (requires Authorization)
 
 POST
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/folder?companyId={companyId}&folder={folder}
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/folder?companyId={companyId}&folder={folder}
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/folder?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&folder=myFolder
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/folder?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&folder=myFolder
 
 Adds a new folder under the given company-id and folder. (requires Authorization)
 
@@ -121,9 +121,9 @@ Adds a new folder under the given company-id and folder. (requires Authorization
 
 DELETE
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/bucket?companyId={companyId}
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId={companyId}
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
 
 deletes the bucket under the given company-id. (requires Authorization)
 
@@ -133,9 +133,9 @@ deletes the bucket under the given company-id. (requires Authorization)
 
 GET
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/bucketBandwidth?companyId={companyId}
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucketBandwidth?companyId={companyId}
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/bucketBandwidth?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucketBandwidth?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
 
 gets the bandwidth of the google storage bucket for the given company-id. (requires Authorization)
 
@@ -145,9 +145,9 @@ gets the bandwidth of the google storage bucket for the given company-id. (requi
 
 GET
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/getUploadURI?companyId={companyId}&fileName=(fileName)&fileType=(fileType)
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/getUploadURI?companyId={companyId}&fileName=(fileName)&fileType=(fileType)
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/getUploadURI?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&fileName=myPic.png&fileType=image/png
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/getUploadURI?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&fileName=myPic.png&fileType=image/png
 
 gets the upload URI for the given company id and filename. (requires Authorization)
 
@@ -157,9 +157,9 @@ gets the upload URI for the given company id and filename. (requires Authorizati
 
 POST
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/files?companyId={companyId}&files=(fileName)&files=(fileName)
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId={companyId}&files=(fileName)&files=(fileName)
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/files?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
 
 deletes a file or group of files for the given company id and strings of file names. (requires Authorization)
 
@@ -181,9 +181,9 @@ gets and returns the list of files given a company id and optional folder name.
 
 POST
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
 
 moves a file or group of files to the trash folder given a company id and strings of file names.
 
@@ -193,9 +193,9 @@ moves a file or group of files to the trash folder given a company id and string
 
 PUT
 
-uri: http://localhost:8888/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
+uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
 
-sample uri: http://localhost:8888/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
+sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
 
 restores a file or group of files from the trash folder to their original path given a company id and strings of file names.
 
