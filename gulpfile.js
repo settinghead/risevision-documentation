@@ -31,21 +31,15 @@ var messages = {
  * Install jekyll and its plugins
  */
 gulp.task('bundle-install', function (done) {
-    browserSync.notify(messages.bundleInstall);
+  browserSync.notify(messages.bundleInstall);
 
-	  if( platform){
-		    return cp.exec('bundle install')
-          .stdout.on('data', function(data){
-            console.log(data);
-          })
-          .stderr.on('data', function(data){
-            console.log('stderr: ' + data);
-          })
-			    .on('close', done);
-	  } else {
-		    return cp.spawn('bundle', ['install'], {stdio: 'inherit'})
-			    .on('close', done);
-	  }
+  if( platform){
+    return cp.spawn('bundle.bat', ['install'], {stdio: 'inherit'})
+      .on('close', done);
+  } else {
+    return cp.spawn('bundle', ['install'], {stdio: 'inherit'})
+      .on('close', done);
+  }
 });
 
 
@@ -56,26 +50,25 @@ gulp.task('bundle-install', function (done) {
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
+  browserSync.notify(messages.jekyllBuild);
 
-	  var config = '';
-    if( env === "prod"){
-	      config = '--config=_config.yml,_config_prod.yml';
-    }else if(env === "stage"){
-	      config = '--config=_config.yml,_config_stage.yml';
+  var config = '';
+  if( env === "prod"){
+    config = '--config=_config.yml,_config_prod.yml';
+  }else if(env === "stage"){
+    config = '--config=_config.yml,_config_stage.yml';
 
-    }else {
-      config = "";
-    }
-	  if (platform){
-      console.log("hello again");
-      return cp.spawn('jekyll.bat', ['build'], {stdio: 'inherit'})
-        .on('close',done);
-	  }
-	  else {
-		    return cp.spawn('bundle', ['exec','jekyll', 'build', config, '--trace'], {stdio: 'inherit'})
-	          .on('close',done);
-	  }
+  }else {
+    config = ''
+  }
+  if (platform){
+    return cp.spawn('bundle.bat', ['exec','jekyll.bat', 'build', config, '--trace'], {stdio: 'inherit'})
+      .on('close',done);
+  }
+  else {
+    return cp.spawn('bundle', ['exec','jekyll', 'build', config, '--trace'], {stdio: 'inherit'})
+      .on('close',done);
+  }
 });
 
 /**
