@@ -33,7 +33,7 @@ _this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693 please us
 
 _Company Id can be found in the "Settings" area of rva.risevision.com in the URL_
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <body>
