@@ -27,7 +27,9 @@ At this time Chrome is the only browser that this project and Rise Vision suppor
 ### Local Development Environment Setup and Installation
 
 * install the latest version of Ruby on your environment 
+* Note: for Windows you need to have Ruby with devkit and python 2 installed, run "gem install jekyll" once these are installed
 * install npm
+
 
 * install Bundler 
 ```bash
@@ -44,10 +46,6 @@ git clone https://github.com/Rise-Vision/risevision-documentation.git
 npm install
 ```
 
-* install gulp globally 
-```bash
-npm install --global gulp
-```
 
 * install jekyll and its plugins
 ```bash
