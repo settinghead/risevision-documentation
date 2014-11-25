@@ -44,6 +44,11 @@ git clone https://github.com/Rise-Vision/risevision-documentation.git
 npm install
 ```
 
+* install gulp globally 
+```bash
+npm install --global gulp
+```
+
 * install jekyll and its plugins
 ```bash
 gulp bundle-install
