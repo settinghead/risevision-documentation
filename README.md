@@ -26,7 +26,7 @@ At this time Chrome is the only browser that this project and Rise Vision suppor
 
 ### Local Development Environment Setup and Installation
 
-* install Ruby on your environment 
+* install the latest version of Ruby on your environment 
 * install npm
 
 * install Bundler 
