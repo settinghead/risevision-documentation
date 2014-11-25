@@ -7,9 +7,23 @@ parent-order: 0
 order: 0
 ---
 
-#### Introduction
+## Overview
 
 Storage provides the ability to manage media that can be used by and referenced from the Rise Vision digital signage platform.
+
+It is an implementation of [Google Cloud Storage](https://cloud.google.com/storage/docs/overview). Your company has one _bucket_ that contains _objects_ (folders and files).
+
+### Accessing files
+
+You can access any file directly by its URL.
+
+You can use the Google API [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get)) to access a list of files in your storage. No authorization is required to retrieve storage contents.
+
+### Updating files through your web browser
+
+You can manage your files and folders by logging in to your account at [www.risevision.com](http://www.risevision.com). Choose 'Storage' from the menu.
+
+### Updating files using the API
 
 The Storage API provides the ability to programmatically manage storage using the Google API javascript client also referred to as "gapi".
 
@@ -22,8 +36,6 @@ The Storage API name is "storage" and version is "v0.01" when using the gapi.cli
 The gapi.auth.authorize method requires a Client Id which can be found in the web/js/config under prod.js in the storage-client repository.
 
 SCOPES are urls that will be able to retrieve user information like google account email, they are provided in the config file.
-
-storage.files.get does not require authorization and can be used by anyone without having to call the gapi.auth.authorize method.
 
 Here is an example of a self-contained html page that you can run on localhost:8000.  This demostrates how to use javascript to authenticate and use the storage api method storage.files.get.
 
