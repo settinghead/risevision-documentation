@@ -59,8 +59,8 @@ gulp bower-clean-install
 gulp jekyll-build 
 ```
 
-* You can write new docs under the _post directory. Folders inside this directory is used to separate the content. 
-Pay attention on the YALM front matter block when creating a new post: 
+* You can write new docs under the _post directory. Folders inside this directory are used to separate the content. 
+Pay attention on the YAML front matter block when creating a new post: 
 ```markdown
 ---
 layout: post

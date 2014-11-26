@@ -7,9 +7,26 @@ parent-order: 0
 order: 0
 ---
 
-#### Introduction
+## Overview
 
 Storage provides the ability to manage media that can be used by and referenced from the Rise Vision digital signage platform.
+
+It is an implementation of [Google Cloud Storage](https://cloud.google.com/storage/docs/overview). Your company has one _bucket_ that contains _objects_ (folders and files).
+
+### Accessing files in your app
+
+There are many ways to access storage in your application. Authorization is not required. You can retrieve a list of files using these components and APIs:
+
+- [rise-storage web compoment](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
+- [storage.files.get]({{site.hashTag}}{% post_url /developer/storage-api/2014-10-23-storage.files.get %}) (RiseVision API)
+- [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get) (Google API)
+- files can be accessed directly by their URL.
+
+### Updating files through your web browser
+
+You can manage your files and folders by logging in to your account at [rva.risevision.com](http://rva.risevision.com). Choose 'Storage' from the menu.
+
+### Managing storage using the API
 
 The Storage API provides the ability to programmatically manage storage using the Google API javascript client also referred to as "gapi".
 
@@ -23,17 +40,13 @@ The gapi.auth.authorize method requires a Client Id which can be found in the we
 
 SCOPES are urls that will be able to retrieve user information like google account email, they are provided in the config file.
 
-storage.files.get does not require authorization and can be used by anyone without having to call the gapi.auth.authorize method.
-
 Here is an example of a self-contained html page that you can run on localhost:8000.  This demostrates how to use javascript to authenticate and use the storage api method storage.files.get.
 
 _note this will not work on localhost (localhost:80) as it is not an accepted origin for google to authenticate to our servers with. Use localhost:8888_
 
-_this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693 please use your own Company Id instead._
+_this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693. Use your own Company Id instead. Company Id can be found in the "Settings" area of [rva.risevision.com](http://rva.risevision.com) in the URL._
 
-_Company Id can be found in the "Settings" area of rva.risevision.com in the URL_
-
-```
+```html
 <!DOCTYPE html>
 <html>
   <body>
