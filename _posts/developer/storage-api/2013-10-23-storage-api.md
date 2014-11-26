@@ -17,10 +17,10 @@ It is an implementation of [Google Cloud Storage](https://cloud.google.com/stora
 
 There are many ways to access storage in your application. Authorization is not required. You can retrieve a list of files using these components and APIs:
 
-- [rise-storage web compoment](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
+- [rise-storage web component](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
 - [storage.files.get]({{site.hashTag}}{% post_url /developer/storage-api/2014-10-23-storage.files.get %}) (RiseVision API)
 - [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get) (Google API)
-- files can be accessed directly by their URL.
+- Files can be accessed directly by their URL.
 
 ### Updating files through your web browser
 
@@ -32,7 +32,7 @@ The Storage API provides the ability to programmatically manage storage using th
 
 Each company within Rise Vision has one bucket that contains the objects that can represent either files themselves or folders that contain files.
 
-For more information to how to authorize using OAUTH 2.0 with google apis please refer to https://developers.google.com/api-client-library/javascript/reference/referencedocs
+For more information to how to authorize using OAUTH 2.0 with Google API please refer to https://developers.google.com/api-client-library/javascript/reference/referencedocs
 
 The Storage API name is "storage" and version is "v0.01" when using the gapi.client.load function.
 
@@ -42,9 +42,9 @@ SCOPES are urls that will be able to retrieve user information like google accou
 
 Here is an example of a self-contained html page that you can run on localhost:8000.  This demostrates how to use javascript to authenticate and use the storage api method storage.files.get.
 
-_note this will not work on localhost (localhost:80) as it is not an accepted origin for google to authenticate to our servers with. Use localhost:8888_
+_Note this will not work on localhost (localhost:80) as it is not an accepted origin for google to authenticate to our servers with. Use localhost:8888_
 
-_this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693. Use your own Company Id instead. Company Id can be found in the "Settings" area of [rva.risevision.com](http://rva.risevision.com) in the URL._
+_This uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693. Use your own Company Id instead. Company Id can be found in the "Settings" area of [rva.risevision.com](http://rva.risevision.com) in the URL._
 
 ```html
 <!DOCTYPE html>
@@ -109,9 +109,9 @@ Below are the available methods with gapi.client once gapi is properly loaded:
 
 POST
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId={companyId}
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId={companyId}
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
 
  
 Adds a new bucket under the given company-id. (requires Authorization)
@@ -122,9 +122,9 @@ Adds a new bucket under the given company-id. (requires Authorization)
 
 POST
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/folder?companyId={companyId}&folder={folder}
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/folder?companyId={companyId}&folder={folder}
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/folder?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&folder=myFolder
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/folder?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&folder=myFolder
 
 Adds a new folder under the given company-id and folder. (requires Authorization)
 
@@ -134,11 +134,11 @@ Adds a new folder under the given company-id and folder. (requires Authorization
 
 DELETE
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId={companyId}
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId={companyId}
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucket?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
 
-deletes the bucket under the given company-id. (requires Authorization)
+Deletes the bucket under the given company-id. (requires Authorization)
 
 ***
 
@@ -146,11 +146,11 @@ deletes the bucket under the given company-id. (requires Authorization)
 
 GET
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucketBandwidth?companyId={companyId}
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucketBandwidth?companyId={companyId}
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucketBandwidth?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/bucketBandwidth?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883
 
-gets the bandwidth of the google storage bucket for the given company-id. (requires Authorization)
+Gets the bandwidth of the google storage bucket for the given company-id. (requires Authorization)
 
 ***
 
@@ -158,11 +158,11 @@ gets the bandwidth of the google storage bucket for the given company-id. (requi
 
 GET
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/getUploadURI?companyId={companyId}&fileName=(fileName)&fileType=(fileType)
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/getUploadURI?companyId={companyId}&fileName=(fileName)&fileType=(fileType)
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/getUploadURI?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&fileName=myPic.png&fileType=image/png
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/getUploadURI?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&fileName=myPic.png&fileType=image/png
 
-gets the upload URI for the given company id and filename. (requires Authorization)
+Gets the upload URI for the given company id and filename. (requires Authorization)
 
 ***
 
@@ -170,11 +170,11 @@ gets the upload URI for the given company id and filename. (requires Authorizati
 
 POST
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId={companyId}&files=(fileName)&files=(fileName)
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId={companyId}&files=(fileName)&files=(fileName)
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/files?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
 
-deletes a file or group of files for the given company id and strings of file names. (requires Authorization)
+Deletes a file or group of files for the given company id and strings of file names. (requires Authorization)
 
 ***
 
@@ -182,9 +182,9 @@ deletes a file or group of files for the given company id and strings of file na
 
 GET
 
-uri: https://www.googleapis.com/storage/v1/b/risemedialibrary-{company-id}/o
+URI: https://www.googleapis.com/storage/v1/b/risemedialibrary-{company-id}/o
 
-sample uri: https://www.googleapis.com/storage/v1/b/risemedialibrary-e599b4e8-c8b9-41d5-7770-b4193c789883/o
+Sample URI: https://www.googleapis.com/storage/v1/b/risemedialibrary-e599b4e8-c8b9-41d5-7770-b4193c789883/o
 
 gets and returns the list of files given a company id and optional folder name.
 
@@ -194,11 +194,11 @@ gets and returns the list of files given a company id and optional folder name.
 
 POST
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
 
-moves a file or group of files to the trash folder given a company id and strings of file names.
+Moves a file or group of files to the trash folder given a company id and strings of file names.
 
 ***
 
@@ -206,10 +206,10 @@ moves a file or group of files to the trash folder given a company id and string
 
 PUT
 
-uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
+URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId={company-id}&files=(fileName)&files=(fileName)
 
-sample uri: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
+Sample URI: https://storage-dot-rvaserver2.appspot.com/_ah/api/storage/v0.01/trash?companyId=e599b4e8-c8b9-41d5-7770-b4193c789883&files=myPic.png&files=myImage.png
 
-restores a file or group of files from the trash folder to their original path given a company id and strings of file names.
+Restores a file or group of files from the trash folder to their original path given a company id and strings of file names.
 
 ***
