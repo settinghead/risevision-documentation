@@ -15,19 +15,18 @@ It is an implementation of [Google Cloud Storage](https://cloud.google.com/stora
 
 ### Accessing files in your app
 
-There are many ways to access storage in your application. You can retrieve a list of files using these components and APIs:
+There are many ways to access storage in your application. Authorization is not required. You can retrieve a list of files using these components and APIs:
 
-- the [rise-storage web compoment](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
+- [rise-storage web compoment](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
 - [storage.files.get]({{site.hashTag}}{% post_url /developer/storage-api/2014-10-23-storage.files.get %}) (RiseVision API)
-- [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get)) (Google API)
-
-Files can also be accessed directly by their URL.
+- [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get) (Google API)
+- files can be accessed directly by their URL.
 
 ### Updating files through your web browser
 
-You can manage your files and folders by logging in to your account at [www.risevision.com](http://www.risevision.com). Choose 'Storage' from the menu.
+You can manage your files and folders by logging in to your account at [rva.risevision.com](http://rva.risevision.com). Choose 'Storage' from the menu.
 
-### Updating files using the API
+### Managing storage using the API
 
 The Storage API provides the ability to programmatically manage storage using the Google API javascript client also referred to as "gapi".
 
@@ -45,9 +44,7 @@ Here is an example of a self-contained html page that you can run on localhost:8
 
 _note this will not work on localhost (localhost:80) as it is not an accepted origin for google to authenticate to our servers with. Use localhost:8888_
 
-_this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693 please use your own Company Id instead._
-
-_Company Id can be found in the "Settings" area of rva.risevision.com in the URL_
+_this uses an example Company Id: e78d4e89-fb21-3411-a20f-8b5a73bc3693. Use your own Company Id instead. Company Id can be found in the "Settings" area of [rva.risevision.com](http://rva.risevision.com) in the URL_
 
 ```html
 <!DOCTYPE html>
