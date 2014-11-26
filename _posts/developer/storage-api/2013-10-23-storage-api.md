@@ -13,11 +13,15 @@ Storage provides the ability to manage media that can be used by and referenced 
 
 It is an implementation of [Google Cloud Storage](https://cloud.google.com/storage/docs/overview). Your company has one _bucket_ that contains _objects_ (folders and files).
 
-### Accessing files
+### Accessing files in your app
 
-You can access any file directly by its URL.
+There are many ways to access storage in your application. You can retrieve a list of files using these components and APIs:
 
-You can use the Google API [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get)) to access a list of files in your storage. No authorization is required to retrieve storage contents.
+- the [rise-storage web compoment](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
+- [storage.files.get]({{site.hashTag}}{% post_url /developer/storage-api/2014-10-23-storage.files.get %}) (RiseVision API)
+- [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get)) (Google API)
+
+Files can also be accessed directly by their URL.
 
 ### Updating files through your web browser
 
