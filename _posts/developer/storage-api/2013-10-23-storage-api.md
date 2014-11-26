@@ -17,7 +17,7 @@ It is an implementation of [Google Cloud Storage](https://cloud.google.com/stora
 
 There are many ways to access storage in your application. Authorization is not required. You can retrieve a list of files using these components and APIs:
 
-- [rise-storage web compoment](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
+- [rise-storage web component](http://rise-vision.github.io/web-component-rise-storage/components/web-component-rise-storage/rise-storage/)
 - [storage.files.get]({{site.hashTag}}{% post_url /developer/storage-api/2014-10-23-storage.files.get %}) (RiseVision API)
 - [storage.objects.get](https://cloud.google.com/storage/docs/json_api/v1/objects/get) (Google API)
 - files can be accessed directly by their URL.
