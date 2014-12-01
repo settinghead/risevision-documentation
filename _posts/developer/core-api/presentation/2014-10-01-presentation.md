@@ -1,8 +1,8 @@
 ---
 layout: developer-summary
-title:  "Presentations"
+title:  "Presentation"
 date:   2014-10-01 10:52:00
-category: developer/core-api/presentations
+category: developer/core-api/presentation
 parent-order: 4
 order: 0
 ---

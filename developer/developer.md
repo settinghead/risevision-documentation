@@ -13,11 +13,11 @@ Rise Vision provides a number of APIs to help you build digital signage applicat
 
 Allows client applications to view and update digital signage-related objects supported by the Rise Vision platform:
 
-- [Company]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-companies %})
-- [Display]({{site.hashTag}}{% post_url /developer/core-api/display/2014-10-01-displays %})
-- [User]({{site.hashTag}}{% post_url /developer/core-api/user/2014-10-01-users %})
-- [Schedule]({{site.hashTag}}{% post_url /developer/core-api/schedule/2014-10-01-schedules %})
-- [Presentation]({{site.hashTag}}{% post_url /developer/core-api/presentation/2014-10-01-presentations %})
+- [Company]({{site.hashTag}}{% post_url /developer/core-api/company/2014-10-01-company %})
+- [Display]({{site.hashTag}}{% post_url /developer/core-api/display/2014-10-01-display %})
+- [User]({{site.hashTag}}{% post_url /developer/core-api/user/2014-10-01-user %})
+- [Schedule]({{site.hashTag}}{% post_url /developer/core-api/schedule/2014-10-01-schedule %})
+- [Presentation]({{site.hashTag}}{% post_url /developer/core-api/presentation/2014-10-01-presentation %})
   
 
 Relationships between these objects can be described as follows:
@@ -26,9 +26,9 @@ Relationships between these objects can be described as follows:
 
 Utility read-only objects, such as:
 
-- [System Message]({{site.hashTag}}{% post_url /developer/core-api/systemmessage/2014-10-01-system-messages %})
-- [Country]({{site.hashTag}}{% post_url /developer/core-api/country/2014-10-01-countries %})
-- [Time Zone]({{site.hashTag}}{% post_url /developer/core-api/country/2014-10-01-countries %})
+- [System Message]({{site.hashTag}}{% post_url /developer/core-api/systemmessage/2014-10-01-system-message %})
+- [Country]({{site.hashTag}}{% post_url /developer/core-api/country/2014-10-01-country %})
+- [Time Zone]({{site.hashTag}}{% post_url /developer/core-api/timezone/2014-10-01-timezone %})
 
 are also provided to facilitate building of user interfaces.
 

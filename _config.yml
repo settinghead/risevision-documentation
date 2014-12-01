@@ -44,13 +44,14 @@ developerSections: [
       ['developer/getting-started/registration', 'Registration']
     ]],
     ['developer/core-api', 'Core API', [
-      ['developer/core-api/companies', 'Companies'],
-      ['developer/core-api/displays', 'Displays'],
-      ['developer/core-api/users', 'Users'],
-      ['developer/core-api/countries', 'Countries'],
-      ['developer/core-api/presentations', 'Presentations'],
-      ['developer/core-api/schedules', 'Schedules'],
-      ['developer/core-api/systemmessages', 'System Messages']
+      ['developer/core-api/company', 'Company'],
+      ['developer/core-api/display', 'Display'],
+      ['developer/core-api/user', 'User'],
+      ['developer/core-api/country', 'Country'],
+      ['developer/core-api/timezone', 'Timezone'],
+      ['developer/core-api/presentation', 'Presentation'],
+      ['developer/core-api/schedule', 'Schedule'],
+      ['developer/core-api/systemmessage', 'System Message']
     ]],
     ['developer/content-api', 'Content API', [
       ['developer/content-api/presentations', 'Presentations']
