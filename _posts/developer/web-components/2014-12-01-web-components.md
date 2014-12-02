@@ -30,4 +30,4 @@ Using a Web Component is as simple as importing `webcomponents.js` (to include t
 ### [Rise Storage Web Component](https://github.com/Rise-Vision/web-component-rise-storage)
 The Rise Storage Web Component uses Google’s Storage API to retrieve the URL of a file, or the URLs of all files within a folder, from Rise Storage.
 
-[Demo](http://rise-vision.github.io/web-component-rise-storage/demo.html)
+[Demo](http://rise-vision.github.io/web-component-rise-storage/)
