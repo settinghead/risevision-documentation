@@ -1,9 +1,9 @@
 ---
 layout: user-post
-title:  "Dislay Control"
+title:  "Display Control"
 date:   2014-10-13 10:52:00
 category: user/player/chrome-app
-order: 2
+order: 6
 ---
 
 ##What is Display Control
