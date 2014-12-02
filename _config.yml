@@ -73,6 +73,7 @@ developerSections: [
       ['developer/presentations/presentation-tutorials', 'Presentation Tutorials']
     ]],
     ['developer/widget-api', 'Widgets'],
+    ['developer/web-components', 'Web Components'],
     ['developer/common-header', 'Common Header']
 ]
 
